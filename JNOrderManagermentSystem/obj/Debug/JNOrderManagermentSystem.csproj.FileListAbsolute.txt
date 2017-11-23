@@ -29,3 +29,10 @@ C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrde
 C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\bin\Debug\Order.Common.pdb
 C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\bin\Debug\Microsoft.Office.Interop.Excel.xml
 C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\bin\Debug\office.xml
+C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\JNOrderManagermentSystem.frmMain.resources
+C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\JNOrderManagermentSystem.Controls.OrderFormControl.resources
+C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\JNOrderManagermentSystem.OrdersControl.resources
+C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\JNOrderManagermentSystem.frmCustomerMain.resources
+C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\JNOrderManagermentSystem.frmaddcustomer.resources
+C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\JNOrderManagermentSystem.frmProductMain.resources
+C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\JNOrderManagermentSystem.frmaddProcuct.resources

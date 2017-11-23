@@ -11,7 +11,7 @@ namespace Order.Common
     {
         //private static string connstr = @"server=localhost;uid=root;pwd=121535;database=tem;charset=utf8";
         //private static string connstr = @"Host=127.0.0.1;UserName=root;Password=drpassword;Database=watermonitor;Port=3406;CharSet=utf8;Allow Zero Datetime=true";
-        private static string connstr = "server=qdm183517594.my3w.com;user=qdm183517594;password=lyh07910;database=qdm183517594_db";//根据自己的实际
+        private static string connstr = "server=qdm183517594.my3w.com;user=qdm183517594;password=lyh07910;database=qdm183517594_db;Convert Zero Datetime=True;Allow Zero Datetime=True";//根据自己的实际
  
         #region 执行查询语句，返回MySqlDataReader
         /// <summary>

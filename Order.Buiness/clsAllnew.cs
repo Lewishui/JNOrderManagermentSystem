@@ -318,6 +318,102 @@ namespace Order.Buiness
             //} 
             #endregion
         }
+        public int create_customer_Server(List<clscustomerinfo> AddMAPResult)
+        {
+            string sql = "insert into JNOrder_customer(customer_name,customer_adress,customer_shuihao,customer_bank,customer_account,customer_phone,Input_Date,customer_contact) values ('" + AddMAPResult[0].customer_name + "','" + AddMAPResult[0].customer_adress + "','" + AddMAPResult[0].customer_shuihao + "','" + AddMAPResult[0].customer_bank + "','" + AddMAPResult[0].customer_account + "','" + AddMAPResult[0].customer_phone + "','" + AddMAPResult[0].Input_Date.ToString("yyyy/MM/dd") + "','" + AddMAPResult[0].customer_contact + "')";
+            int isrun = MySqlHelper.ExecuteSql(sql);
+
+            return isrun;
+        }
+        public int deletecustomer(string name)
+        {
+            string sql2 = "delete from JNOrder_customer where  customer_id='" + name + "'";
+            int isrun = MySqlHelper.ExecuteSql(sql2);
+
+            return isrun;
+          
+        }
+        public List<clscustomerinfo> findcustomer(string findtext)
+        {
+            MySql.Data.MySqlClient.MySqlDataReader reader = MySqlHelper.ExecuteReader(findtext);
+            List<clscustomerinfo> ClaimReport_Server = new List<clscustomerinfo>();
+
+            while (reader.Read())
+            {
+                clscustomerinfo item = new clscustomerinfo();
+
+                item.customer_id = reader.GetInt32(0);
+                item.customer_name = reader.GetString(1);
+                item.customer_adress = reader.GetString(2);
+                item.customer_shuihao = reader.GetString(3);
+                item.customer_bank = reader.GetString(4);
+                item.customer_account = reader.GetString(5);
+                item.customer_phone = reader.GetString(6);
+                item.customer_contact = reader.GetString(7);
+                if (reader.GetString(8) != null && reader.GetString(8)!="")
+                item.Input_Date = Convert.ToDateTime( reader.GetString(8));
+
+
+
+                ClaimReport_Server.Add(item);
+
+                //这里做数据处理....
+            }
+            return ClaimReport_Server;
+        }
+        public int updatecustomer_Server(string findtext)
+        {
+             int isrun = MySqlHelper.ExecuteSql(findtext);
+
+            return isrun;
+        }
+        public int create_Product_Server(List<clsProductinfo> AddMAPResult)
+        {
+            string sql = "insert into JNOrder_product(Product_no,Product_name,Product_salse,Product_address,Input_Date) values ('" + AddMAPResult[0].Product_no + "','" + AddMAPResult[0].Product_name + "','" + AddMAPResult[0].Product_salse + "','" + AddMAPResult[0].Product_address + "','" + AddMAPResult[0].Input_Date.ToString("yyyy/MM/dd") + "')";
+            int isrun = MySqlHelper.ExecuteSql(sql);
+
+            return isrun;
+        }
+        public List<clsProductinfo> findProductr(string findtext)
+        {
+            MySql.Data.MySqlClient.MySqlDataReader reader = MySqlHelper.ExecuteReader(findtext);
+            List<clsProductinfo> ClaimReport_Server = new List<clsProductinfo>();
+
+            while (reader.Read())
+            {
+                clsProductinfo item = new clsProductinfo();
+
+                item.Product_id = reader.GetInt32(0);
+                item.Product_no = reader.GetString(1);
+                item.Product_name = reader.GetString(2);
+                item.Product_salse = reader.GetString(3);
+                item.Product_address = reader.GetString(4);
+             
+                if (reader.GetString(5) != null && reader.GetString(5) != "")
+                    item.Input_Date = Convert.ToDateTime(reader.GetString(5));
+
+
+
+                ClaimReport_Server.Add(item);
+
+                //这里做数据处理....
+            }
+            return ClaimReport_Server;
+        }
+        public int deleteProduct(string name)
+        {
+            string sql2 = "delete from JNOrder_product where  Product_id='" + name + "'";
+            int isrun = MySqlHelper.ExecuteSql(sql2);
+
+            return isrun;
+
+        }
+        public int updateProduct_Server(string findtext)
+        {
+            int isrun = MySqlHelper.ExecuteSql(findtext);
+
+            return isrun;
+        }
        
     }
 }

@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using JNOrderManagermentSystem.Controls;
 using Microsoft.Win32;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -27,6 +28,9 @@ namespace JNOrderManagermentSystem
         private System.Timers.Timer timerAlter1;
         private string ipadress;
         int logis = 0;
+        private OrdersControl OrdersControl;
+
+
         public frmlogin()
         {
             InitializeComponent();
@@ -338,5 +342,34 @@ namespace JNOrderManagermentSystem
             }
         }
 
+        private void 导入彩票数据ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //this.panel1.Controls.Clear();
+            //this.panel1.Controls.Add(OrdersControl);
+            //dockPanel2.Visible = false;
+
+            //this.dockPanel2.Controls.Clear();
+            //this.dockPanel2.Controls.Add(OrdersControl);
+
+
+
+            if (OrdersControl == null)
+            {
+                OrdersControl = new OrdersControl(this.txtSAPUserId.Text, this.txtSAPPassword.Text.Trim());
+                OrdersControl.FormClosed += new FormClosedEventHandler(FrmOMS_FormClosed);
+            }
+            if (OrdersControl == null)
+            {
+                OrdersControl = new OrdersControl(this.txtSAPUserId.Text, this.txtSAPPassword.Text.Trim());
+            }
+            OrdersControl.Show(this.dockPanel2);
+        }
+        void FrmOMS_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (sender is OrdersControl)
+            {
+                OrdersControl = null;
+            }
+        }
     }
 }

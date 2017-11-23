@@ -46,26 +46,26 @@
             WeifenLuo.WinFormsUI.Docking.TabGradient tabGradient7 = new WeifenLuo.WinFormsUI.Docking.TabGradient();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmlogin));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dockPanel2 = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsbLogin = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.txtSAPUserId = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.dockPanel2 = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.pBBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.修改登录信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.导入彩票数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查询信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsbLogin = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.txtSAPUserId = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.关于系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.追踪分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.打开本地目录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.一键配置初始化信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +81,67 @@
             this.panel1.Size = new System.Drawing.Size(842, 537);
             this.panel1.TabIndex = 9;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton2,
+            this.toolStripDropDownButton1,
+            this.tsbLogin,
+            this.toolStripSeparator1,
+            this.toolStripLabel2,
+            this.txtSAPUserId,
+            this.toolStripLabel1,
+            this.toolStripDropDownButton3});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(842, 44);
+            this.toolStrip1.TabIndex = 6;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbLogin
+            // 
+            this.tsbLogin.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbLogin.BackColor = System.Drawing.Color.Lime;
+            this.tsbLogin.DoubleClickEnabled = true;
+            this.tsbLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsbLogin.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.tsbLogin.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbLogin.Name = "tsbLogin";
+            this.tsbLogin.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.tsbLogin.Size = new System.Drawing.Size(48, 41);
+            this.tsbLogin.Text = "登录";
+            this.tsbLogin.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbLogin.Click += new System.EventHandler(this.tsbLogin_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 44);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(43, 41);
+            this.toolStripLabel2.Text = "密码：";
+            // 
+            // txtSAPUserId
+            // 
+            this.txtSAPUserId.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.txtSAPUserId.Name = "txtSAPUserId";
+            this.txtSAPUserId.Size = new System.Drawing.Size(100, 44);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(55, 39);
+            this.toolStripLabel1.Text = "用户名：";
+            // 
             // dockPanel2
             // 
             this.dockPanel2.ActiveAutoHideContent = null;
@@ -91,9 +152,9 @@
             this.dockPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dockPanel2.DockBackColor = System.Drawing.Color.Transparent;
             this.dockPanel2.DocumentStyle = WeifenLuo.WinFormsUI.Docking.DocumentStyle.DockingWindow;
-            this.dockPanel2.Location = new System.Drawing.Point(0, 28);
+            this.dockPanel2.Location = new System.Drawing.Point(0, 44);
             this.dockPanel2.Name = "dockPanel2";
-            this.dockPanel2.Size = new System.Drawing.Size(842, 509);
+            this.dockPanel2.Size = new System.Drawing.Size(842, 493);
             dockPanelGradient1.EndColor = System.Drawing.SystemColors.ControlLight;
             dockPanelGradient1.StartColor = System.Drawing.SystemColors.ControlLight;
             autoHideStripSkin1.DockStripGradient = dockPanelGradient1;
@@ -140,37 +201,18 @@
             this.dockPanel2.Skin = dockPanelSkin1;
             this.dockPanel2.TabIndex = 9;
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton2,
-            this.toolStripDropDownButton1,
-            this.tsbLogin,
-            this.toolStripSeparator1,
-            this.toolStripLabel2,
-            this.txtSAPUserId,
-            this.toolStripLabel1,
-            this.toolStripDropDownButton3});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(842, 28);
-            this.toolStrip1.TabIndex = 6;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
             // toolStripDropDownButton2
             // 
-            this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pBBToolStripMenuItem,
             this.修改登录信息ToolStripMenuItem});
             this.toolStripDropDownButton2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
+            this.toolStripDropDownButton2.Image = global::JNOrderManagermentSystem.Properties.Resources.user_5c;
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(55, 25);
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(55, 41);
             this.toolStripDropDownButton2.Text = "选择";
+            this.toolStripDropDownButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // pBBToolStripMenuItem
             // 
@@ -192,11 +234,11 @@
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.导入彩票数据ToolStripMenuItem,
             this.查询信息ToolStripMenuItem});
-            this.toolStripDropDownButton1.Enabled = false;
             this.toolStripDropDownButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripDropDownButton1.Image = global::JNOrderManagermentSystem.Properties.Resources._039aca64ea8386f7b6f814cfad13c979;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(55, 25);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(55, 41);
             this.toolStripDropDownButton1.Text = "数据";
             this.toolStripDropDownButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -204,7 +246,8 @@
             // 
             this.导入彩票数据ToolStripMenuItem.Name = "导入彩票数据ToolStripMenuItem";
             this.导入彩票数据ToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
-            this.导入彩票数据ToolStripMenuItem.Text = "发票登记";
+            this.导入彩票数据ToolStripMenuItem.Text = "主页面";
+            this.导入彩票数据ToolStripMenuItem.Click += new System.EventHandler(this.导入彩票数据ToolStripMenuItem_Click);
             // 
             // 查询信息ToolStripMenuItem
             // 
@@ -212,51 +255,8 @@
             this.查询信息ToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.查询信息ToolStripMenuItem.Text = "查询发票信息";
             // 
-            // tsbLogin
-            // 
-            this.tsbLogin.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbLogin.BackColor = System.Drawing.Color.Lime;
-            this.tsbLogin.DoubleClickEnabled = true;
-            this.tsbLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsbLogin.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.tsbLogin.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbLogin.Name = "tsbLogin";
-            this.tsbLogin.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            this.tsbLogin.Size = new System.Drawing.Size(48, 25);
-            this.tsbLogin.Text = "登录";
-            this.tsbLogin.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.tsbLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbLogin.Click += new System.EventHandler(this.tsbLogin_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 28);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(43, 25);
-            this.toolStripLabel2.Text = "密码：";
-            // 
-            // txtSAPUserId
-            // 
-            this.txtSAPUserId.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.txtSAPUserId.Name = "txtSAPUserId";
-            this.txtSAPUserId.Size = new System.Drawing.Size(100, 28);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(55, 23);
-            this.toolStripLabel1.Text = "用户名：";
-            // 
             // toolStripDropDownButton3
             // 
-            this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.关于系统ToolStripMenuItem,
             this.追踪分析ToolStripMenuItem,
@@ -264,11 +264,12 @@
             this.eToolStripMenuItem,
             this.一键配置初始化信息ToolStripMenuItem});
             this.toolStripDropDownButton3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton3.Image")));
+            this.toolStripDropDownButton3.Image = global::JNOrderManagermentSystem.Properties.Resources.tools;
             this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
-            this.toolStripDropDownButton3.Size = new System.Drawing.Size(55, 25);
+            this.toolStripDropDownButton3.Size = new System.Drawing.Size(55, 41);
             this.toolStripDropDownButton3.Text = "关于";
+            this.toolStripDropDownButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // 关于系统ToolStripMenuItem
             // 
