@@ -38,4 +38,27 @@ namespace Order.DB
  
         public DateTime Input_Date { get; set; }
     }
+    //客户 订货时间  订单号   产品型号  名称  数量   单价  金额  预计交货时间  交货时间2  订单管理员   开票  是否交货 付款日期    备注
+    public class clsOrderinfo
+    {
+        public int order_id { get; set; }
+        public string customer_name { get; set; }
+        public DateTime dinghuoshijian { get; set; }
+        public string order_no { get; set; }
+        public string Product_no { get; set; }
+        public string Product_name { get; set; }
+        public string shuliang { get; set; }
+        public string Product_salse { get; set; }
+        public string jine { get; set; }
+        public DateTime yujijiaohuoshijian { get; set; }
+        public DateTime jianhuoshijian2 { get; set; }
+        public string dingdanguanliyuan { get; set; }
+        public string kaipiao { get; set; }
+        public string shifoujiaohuo { get; set; }
+        public DateTime fukuanriqi { get; set; }
+        public string beizhu { get; set; }
+        public DateTime Input_Date { get; set; }
+        //新增的标记
+        public string xinzeng { get; set; }
+    }
 }

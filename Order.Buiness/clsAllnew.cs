@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
@@ -16,6 +20,12 @@ namespace Order.Buiness
     {
         string connectionString = "mongodb://127.0.0.1";
         string DB_NAME = "FA_shop_PT";
+        #region print
+        private List<Stream> m_streams;
+        private int m_currentPageIndex;
+        List<clsOrderinfo> FilterTIPResults;
+        string orderprint;
+        #endregion
 
 
         public clsAllnew()
@@ -331,7 +341,7 @@ namespace Order.Buiness
             int isrun = MySqlHelper.ExecuteSql(sql2);
 
             return isrun;
-          
+
         }
         public List<clscustomerinfo> findcustomer(string findtext)
         {
@@ -350,8 +360,8 @@ namespace Order.Buiness
                 item.customer_account = reader.GetString(5);
                 item.customer_phone = reader.GetString(6);
                 item.customer_contact = reader.GetString(7);
-                if (reader.GetString(8) != null && reader.GetString(8)!="")
-                item.Input_Date = Convert.ToDateTime( reader.GetString(8));
+                if (reader.GetString(8) != null && reader.GetString(8) != "")
+                    item.Input_Date = Convert.ToDateTime(reader.GetString(8));
 
 
 
@@ -363,7 +373,7 @@ namespace Order.Buiness
         }
         public int updatecustomer_Server(string findtext)
         {
-             int isrun = MySqlHelper.ExecuteSql(findtext);
+            int isrun = MySqlHelper.ExecuteSql(findtext);
 
             return isrun;
         }
@@ -388,7 +398,7 @@ namespace Order.Buiness
                 item.Product_name = reader.GetString(2);
                 item.Product_salse = reader.GetString(3);
                 item.Product_address = reader.GetString(4);
-             
+
                 if (reader.GetString(5) != null && reader.GetString(5) != "")
                     item.Input_Date = Convert.ToDateTime(reader.GetString(5));
 
@@ -414,6 +424,167 @@ namespace Order.Buiness
 
             return isrun;
         }
-       
+        public List<clsOrderinfo> findOrder(string findtext)
+        {
+            MySql.Data.MySqlClient.MySqlDataReader reader = MySqlHelper.ExecuteReader(findtext);
+            List<clsOrderinfo> ClaimReport_Server = new List<clsOrderinfo>();
+
+            while (reader.Read())
+            {
+                clsOrderinfo item = new clsOrderinfo();
+
+                item.order_id = reader.GetInt32(0);
+                item.customer_name = reader.GetString(1);
+                if (reader.GetString(2) != null && reader.GetString(2) != "")
+                    item.dinghuoshijian = Convert.ToDateTime(reader.GetString(2));
+
+                item.order_no = reader.GetString(3);
+                item.Product_no = reader.GetString(4);
+
+                item.Product_name = reader.GetString(5);
+                item.shuliang = reader.GetString(6);
+                item.Product_salse = reader.GetString(7);
+                item.jine = reader.GetString(8);
+
+                if (reader.GetString(9) != null && reader.GetString(9) != "")
+                    item.yujijiaohuoshijian = Convert.ToDateTime(reader.GetString(9));
+
+
+
+                if (reader.GetString(10) != null && reader.GetString(10) != "")
+                    item.jianhuoshijian2 = Convert.ToDateTime(reader.GetString(10));
+
+                item.dingdanguanliyuan = reader.GetString(11);
+                item.kaipiao = reader.GetString(12);
+                item.shifoujiaohuo = reader.GetString(13);
+
+
+                if (reader.GetString(14) != null && reader.GetString(14) != "")
+                    item.fukuanriqi = Convert.ToDateTime(reader.GetString(14));
+                item.beizhu = reader.GetString(15);
+
+
+                if (reader.GetString(16) != null && reader.GetString(16) != "")
+                    item.Input_Date = Convert.ToDateTime(reader.GetString(16));
+
+
+
+                ClaimReport_Server.Add(item);
+
+                //这里做数据处理....
+            }
+            return ClaimReport_Server;
+        }
+        public int deleteOrder(string name)
+        {
+            string sql2 = "delete from JNOrder_order where  order_id='" + name + "'";
+            int isrun = MySqlHelper.ExecuteSql(sql2);
+
+            return isrun;
+
+        }
+        public void Run(List<clsOrderinfo> FilterOrderResults)
+        {
+
+            LocalReport report = new LocalReport();
+            report.ReportPath = Application.StartupPath + "\\Report1.rdlc";
+
+            report.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", FilterOrderResults));
+
+            Export(report);
+            m_currentPageIndex = 0;
+
+            Print(orderprint, 0, 0);
+        }
+        public void Export(LocalReport report)
+        {
+
+            string deviceInfo =
+"<DeviceInfo>" +
+"  <OutputFormat>EMF</OutputFormat>" +
+"  <PageWidth>8.27in</PageWidth>" +
+"  <PageHeight>11.69in</PageHeight>" +
+"  <MarginTop>0.0cm</MarginTop>" +
+"  <MarginLeft>0.0cm</MarginLeft>" +
+"  <MarginRight>0.0cm</MarginRight>" +
+"  <MarginBottom>0.0cm</MarginBottom>" +
+"</DeviceInfo>";
+
+            Warning[] warnings;
+            m_streams = new List<Stream>();
+            report.Render("Image", deviceInfo, CreateStream,
+               out warnings);
+            foreach (Stream stream in m_streams)
+                stream.Position = 0;
+        }
+        private Stream CreateStream(string name, string fileNameExtension,
+
+     Encoding encoding, string mimeType, bool willSeek)
+        {
+
+            //如果需要将报表输出的数据保存为文件，请使用FileStream对象。
+
+            Stream stream = new MemoryStream();
+
+            m_streams.Add(stream);
+
+            return stream;
+
+        }
+        public void Print(string defaultPrinterName, int lenpage, int withpage)
+        {
+
+            m_currentPageIndex = 0;
+            if (m_streams == null || m_streams.Count == 0)
+                return;
+            //声明PrintDocument对象用于数据的打印
+
+            PrintDocument printDoc = new PrintDocument();
+
+            //指定需要使用的打印机的名称，使用空字符串""来指定默认打印机
+
+            if (defaultPrinterName == "" || defaultPrinterName == null)
+                defaultPrinterName = printDoc.PrinterSettings.PrinterName;
+
+            printDoc.PrinterSettings.PrinterName = defaultPrinterName;
+
+            //判断指定的打印机是否可用
+
+            if (!printDoc.PrinterSettings.IsValid)
+            {
+                MessageBox.Show("Can't find printer");
+                return;
+            }
+            //声明PrintDocument对象的PrintPage事件，具体的打印操作需要在这个事件中处理。
+
+            printDoc.PrintPage += new PrintPageEventHandler(PrintPage);
+
+            //执行打印操作，Print方法将触发PrintPage事件。
+            printDoc.DefaultPageSettings.Landscape = true;
+            //大小
+            if (lenpage != 0)
+                printDoc.DefaultPageSettings.PaperSize = new PaperSize("Custom", lenpage, withpage);
+
+
+            printDoc.Print();
+
+        }
+        private void PrintPage(object sender, PrintPageEventArgs ev)
+        {
+            Metafile pageImage = new
+               Metafile(m_streams[m_currentPageIndex]);
+            StringFormat SF = new StringFormat();
+            SF.LineAlignment = StringAlignment.Center;
+            SF.Alignment = StringAlignment.Center;
+            float left = ev.PageSettings.Margins.Left;//打印区域的左边界
+            float top = ev.PageSettings.Margins.Top;//打印区域的上边界
+            float width = ev.PageSettings.PaperSize.Width - left - ev.PageSettings.Margins.Right;//计算出有效打印区域的宽度
+            float height = ev.PageSettings.PaperSize.Height - top - ev.PageSettings.Margins.Bottom;//计算出有效打印区域的高度
+
+            ev.Graphics.DrawImage(pageImage, ev.PageBounds);
+            m_currentPageIndex++;
+            ev.HasMorePages = (m_currentPageIndex < m_streams.Count);
+        }
+
     }
 }

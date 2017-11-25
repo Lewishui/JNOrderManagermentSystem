@@ -33,6 +33,8 @@ namespace JNOrderManagermentSystem
             InitializeComponent();
             this.dataGridChanges = new Hashtable();
             changeindex = new List<int>();
+            this.WindowState = FormWindowState.Maximized;
+           
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -128,6 +130,7 @@ namespace JNOrderManagermentSystem
             clsAllnew BusinessHelp = new clsAllnew();
             customerinfolist_Server = new List<clscustomerinfo>();
             customerinfolist_Server = BusinessHelp.findcustomer(strSelect);
+
             this.BindDataGridView();
         }
 
@@ -457,6 +460,11 @@ namespace JNOrderManagermentSystem
             fa.Close();
             MessageBox.Show("Dear User, Down File  Successful ！", "System", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

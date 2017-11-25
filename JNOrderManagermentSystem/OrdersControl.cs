@@ -133,7 +133,7 @@ namespace JNOrderManagermentSystem
             //    newOrdersForm.InitializeOrderData();
             //    newOrdersForm.ShowDialog();
 
-            var form = new frmCustomerMain("");
+            var form = new frmOrderMain("");
 
             if (form.ShowDialog() == DialogResult.OK)
             {

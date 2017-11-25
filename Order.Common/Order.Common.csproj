@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MockEntity.cs" />
     <Compile Include="MySqlHelper.cs" />
     <Compile Include="clsCommHelp.cs" />
     <Compile Include="clsConstant.cs" />

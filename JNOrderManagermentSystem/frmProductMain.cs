@@ -33,6 +33,8 @@ namespace JNOrderManagermentSystem
             InitializeComponent();
             this.dataGridChanges = new Hashtable();
             changeindex = new List<int>();
+            this.WindowState = FormWindowState.Maximized;
+           
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -404,7 +406,7 @@ namespace JNOrderManagermentSystem
             var saveFileDialog = new SaveFileDialog();
             saveFileDialog.DefaultExt = ".csv";
             saveFileDialog.Filter = "csv|*.csv";
-            string strFileName = "客户 信息" + "_" + DateTime.Now.ToString("yyyyMMddHHmmss");
+            string strFileName = "商品 信息" + "_" + DateTime.Now.ToString("yyyyMMddHHmmss");
             saveFileDialog.FileName = strFileName;
             if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
             {
@@ -463,6 +465,11 @@ namespace JNOrderManagermentSystem
             //else
             //    handle = false;
             //e.Cancel = handle;
+        }
+
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

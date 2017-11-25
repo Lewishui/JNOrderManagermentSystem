@@ -36,3 +36,8 @@ C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrde
 C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\JNOrderManagermentSystem.frmaddcustomer.resources
 C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\JNOrderManagermentSystem.frmProductMain.resources
 C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\JNOrderManagermentSystem.frmaddProcuct.resources
+C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\JNOrderManagermentSystem.frmOrderMain.resources
+C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\RdlCompile.cache
+C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\RdlCompile.compiled
+C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\bin\Debug\Report1.rdlc
+C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\JNOrderManagermentSystem.frmAlterShow.resources

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
@@ -39,6 +39,12 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Product_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_salse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Input_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -54,12 +60,6 @@
             this.pbStatus = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.Product_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_salse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Input_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -75,15 +75,15 @@
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.691099F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 91.3089F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
             this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(955, 547);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -138,9 +138,9 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.groupBox1.Location = new System.Drawing.Point(85, 3);
+            this.groupBox1.Location = new System.Drawing.Point(86, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(867, 541);
+            this.groupBox1.Size = new System.Drawing.Size(866, 541);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
@@ -148,12 +148,12 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControl1.Location = new System.Drawing.Point(3, 16);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(861, 497);
+            this.tabControl1.Size = new System.Drawing.Size(860, 497);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
             // tabPage1
             // 
@@ -162,16 +162,16 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(853, 471);
+            this.tabPage1.Size = new System.Drawing.Size(852, 471);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "主页";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -186,12 +186,49 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 95);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(847, 373);
+            this.dataGridView1.Size = new System.Drawing.Size(846, 373);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
+            // 
+            // Product_no
+            // 
+            this.Product_no.DataPropertyName = "Product_no";
+            this.Product_no.HeaderText = "商品型号";
+            this.Product_no.Name = "Product_no";
+            // 
+            // Product_name
+            // 
+            this.Product_name.DataPropertyName = "Product_name";
+            this.Product_name.HeaderText = "商品名称";
+            this.Product_name.Name = "Product_name";
+            // 
+            // Product_salse
+            // 
+            this.Product_salse.DataPropertyName = "Product_salse";
+            this.Product_salse.HeaderText = "商品单价";
+            this.Product_salse.Name = "Product_salse";
+            // 
+            // Product_address
+            // 
+            this.Product_address.DataPropertyName = "Product_address";
+            this.Product_address.HeaderText = "商品产地";
+            this.Product_address.Name = "Product_address";
+            // 
+            // Input_Date
+            // 
+            this.Input_Date.DataPropertyName = "Input_Date";
+            this.Input_Date.HeaderText = "录入时间";
+            this.Input_Date.Name = "Input_Date";
+            // 
+            // Product_id
+            // 
+            this.Product_id.DataPropertyName = "Product_id";
+            this.Product_id.HeaderText = "Product_id";
+            this.Product_id.Name = "Product_id";
+            this.Product_id.Visible = false;
             // 
             // contextMenuStrip1
             // 
@@ -221,7 +258,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(847, 92);
+            this.groupBox2.Size = new System.Drawing.Size(846, 92);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Action";
@@ -258,7 +295,7 @@
             // filterButton
             // 
             this.filterButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.filterButton.Location = new System.Drawing.Point(743, 26);
+            this.filterButton.Location = new System.Drawing.Point(742, 26);
             this.filterButton.Name = "filterButton";
             this.filterButton.Size = new System.Drawing.Size(101, 41);
             this.filterButton.TabIndex = 78;
@@ -314,7 +351,7 @@
             this.toolStripLabel1});
             this.toolStrip2.Location = new System.Drawing.Point(3, 513);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(861, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(860, 25);
             this.toolStrip2.TabIndex = 0;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -335,43 +372,6 @@
             this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
             this.backgroundWorker2.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker2_ProgressChanged);
             this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
-            // 
-            // Product_no
-            // 
-            this.Product_no.DataPropertyName = "Product_no";
-            this.Product_no.HeaderText = "商品型号";
-            this.Product_no.Name = "Product_no";
-            // 
-            // Product_name
-            // 
-            this.Product_name.DataPropertyName = "Product_name";
-            this.Product_name.HeaderText = "商品名称";
-            this.Product_name.Name = "Product_name";
-            // 
-            // Product_salse
-            // 
-            this.Product_salse.DataPropertyName = "Product_salse";
-            this.Product_salse.HeaderText = "商品单价";
-            this.Product_salse.Name = "Product_salse";
-            // 
-            // Product_address
-            // 
-            this.Product_address.DataPropertyName = "Product_address";
-            this.Product_address.HeaderText = "商品产地";
-            this.Product_address.Name = "Product_address";
-            // 
-            // Input_Date
-            // 
-            this.Input_Date.DataPropertyName = "Input_Date";
-            this.Input_Date.HeaderText = "录入时间";
-            this.Input_Date.Name = "Input_Date";
-            // 
-            // Product_id
-            // 
-            this.Product_id.DataPropertyName = "Product_id";
-            this.Product_id.HeaderText = "Product_id";
-            this.Product_id.Name = "Product_id";
-            this.Product_id.Visible = false;
             // 
             // frmProductMain
             // 
@@ -402,8 +402,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -420,16 +418,18 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripProgressBar pbStatus;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product_no;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product_salse;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product_address;
         private System.Windows.Forms.DataGridViewTextBoxColumn Input_Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product_id;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }

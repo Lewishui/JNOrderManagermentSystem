@@ -81,6 +81,12 @@
     <Compile Include="frmaddcustomer.Designer.cs">
       <DependentUpon>frmaddcustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAlterShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlterShow.Designer.cs">
+      <DependentUpon>frmAlterShow.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCustomerMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,11 +151,20 @@
     <Compile Include="frmaddProcuct.Designer.cs">
       <DependentUpon>frmaddProcuct.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmOrderMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderMain.Designer.cs">
+      <DependentUpon>frmOrderMain.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmAboutBox.resx">
       <DependentUpon>frmAboutBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmaddcustomer.resx">
       <DependentUpon>frmaddcustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlterShow.resx">
+      <DependentUpon>frmAlterShow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerMain.resx">
       <DependentUpon>frmCustomerMain.cs</DependentUpon>
@@ -191,6 +206,13 @@
     <EmbeddedResource Include="frmaddProcuct.resx">
       <DependentUpon>frmaddProcuct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderMain.resx">
+      <DependentUpon>frmOrderMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\Order.DB.clsOrderinfo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
