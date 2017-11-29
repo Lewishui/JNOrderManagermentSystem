@@ -433,6 +433,10 @@ namespace JNOrderManagermentSystem
             userlist_Server.Add(item);
             clsAllnew BusinessHelp = new clsAllnew();
 
+
+            BusinessHelp.deleteUSER(item.name);
+         
+
             BusinessHelp.createUser_Server(userlist_Server);
 
             MessageBox.Show("创建用户成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);

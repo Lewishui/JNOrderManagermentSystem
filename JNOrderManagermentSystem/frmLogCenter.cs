@@ -246,6 +246,7 @@ namespace JNOrderManagermentSystem
             this.WindowState = FormWindowState.Maximized;
             this.groupBox2.Visible = false;
             this.toolStrip2.Visible = false;
+            this.FormBorderStyle = FormBorderStyle.None;
 
         }
 
@@ -256,6 +257,7 @@ namespace JNOrderManagermentSystem
                 this.WindowState = FormWindowState.Minimized;
                 this.groupBox2.Visible = true;
                 this.toolStrip2.Visible = true;
+                this.FormBorderStyle = FormBorderStyle.Sizable;
 
             }
         }
