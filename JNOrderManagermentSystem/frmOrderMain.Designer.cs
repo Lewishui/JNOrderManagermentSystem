@@ -30,34 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderMain));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.filterButton = new System.Windows.Forms.Button();
-            this.stockInDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.stockOutDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.newButton = new System.Windows.Forms.Button();
-            this.moveDownButton1 = new System.Windows.Forms.Button();
-            this.delScheduleButton = new System.Windows.Forms.Button();
-            this.moveUpButton2 = new System.Windows.Forms.Button();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.pbStatus = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.打印ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.customer_name = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dinghuoshijian = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,6 +54,30 @@
             this.Input_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.xinzeng = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.打印ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.filterButton = new System.Windows.Forms.Button();
+            this.stockInDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.stockOutDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.newButton = new System.Windows.Forms.Button();
+            this.moveDownButton1 = new System.Windows.Forms.Button();
+            this.delScheduleButton = new System.Windows.Forms.Button();
+            this.moveUpButton2 = new System.Windows.Forms.Button();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.pbStatus = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -121,6 +123,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.ImageList = this.imageList1;
             this.tabControl1.Location = new System.Drawing.Point(3, 16);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -134,10 +137,11 @@
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.ImageIndex = 0;
+            this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(935, 471);
+            this.tabPage1.Size = new System.Drawing.Size(935, 470);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "主页";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -173,7 +177,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 95);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(929, 332);
+            this.dataGridView1.Size = new System.Drawing.Size(929, 331);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -182,220 +186,6 @@
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.删除ToolStripMenuItem,
-            this.保存ToolStripMenuItem,
-            this.打印ToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(99, 70);
-            // 
-            // 删除ToolStripMenuItem
-            // 
-            this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
-            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.删除ToolStripMenuItem.Text = "删除";
-            this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
-            // 
-            // 保存ToolStripMenuItem
-            // 
-            this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
-            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.保存ToolStripMenuItem.Text = "保存";
-            this.保存ToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.label24);
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.filterButton);
-            this.groupBox2.Controls.Add(this.stockInDateTimePicker1);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.stockOutDateTimePicker);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(929, 92);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Action";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(471, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 15);
-            this.label1.TabIndex = 90;
-            this.label1.Text = "*如果查找所有请填写\"所有\"";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(15, 65);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(73, 20);
-            this.label24.TabIndex = 89;
-            this.label24.Text = "查找内容";
-            // 
-            // textBox8
-            // 
-            this.textBox8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(109, 63);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(356, 26);
-            this.textBox8.TabIndex = 8;
-            this.textBox8.Enter += new System.EventHandler(this.textBox8_Enter);
-            // 
-            // filterButton
-            // 
-            this.filterButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.filterButton.Location = new System.Drawing.Point(825, 26);
-            this.filterButton.Name = "filterButton";
-            this.filterButton.Size = new System.Drawing.Size(101, 41);
-            this.filterButton.TabIndex = 78;
-            this.filterButton.Text = "查找";
-            this.filterButton.UseVisualStyleBackColor = true;
-            this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
-            // 
-            // stockInDateTimePicker1
-            // 
-            this.stockInDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockInDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.stockInDateTimePicker1.Location = new System.Drawing.Point(356, 22);
-            this.stockInDateTimePicker1.Name = "stockInDateTimePicker1";
-            this.stockInDateTimePicker1.Size = new System.Drawing.Size(109, 26);
-            this.stockInDateTimePicker1.TabIndex = 5;
-            this.stockInDateTimePicker1.Value = new System.DateTime(2017, 12, 31, 0, 0, 0, 0);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(263, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 20);
-            this.label4.TabIndex = 76;
-            this.label4.Text = "结束时间";
-            // 
-            // stockOutDateTimePicker
-            // 
-            this.stockOutDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockOutDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.stockOutDateTimePicker.Location = new System.Drawing.Point(109, 22);
-            this.stockOutDateTimePicker.Name = "stockOutDateTimePicker";
-            this.stockOutDateTimePicker.Size = new System.Drawing.Size(114, 26);
-            this.stockOutDateTimePicker.TabIndex = 4;
-            this.stockOutDateTimePicker.Value = new System.DateTime(2017, 3, 1, 0, 0, 0, 0);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "开始时间";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.newButton);
-            this.groupBox3.Controls.Add(this.moveDownButton1);
-            this.groupBox3.Controls.Add(this.delScheduleButton);
-            this.groupBox3.Controls.Add(this.moveUpButton2);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBox3.Location = new System.Drawing.Point(3, 427);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(929, 41);
-            this.groupBox3.TabIndex = 42;
-            this.groupBox3.TabStop = false;
-            // 
-            // newButton
-            // 
-            this.newButton.Location = new System.Drawing.Point(6, 9);
-            this.newButton.Name = "newButton";
-            this.newButton.Size = new System.Drawing.Size(35, 25);
-            this.newButton.TabIndex = 38;
-            this.newButton.Text = "+";
-            this.newButton.UseVisualStyleBackColor = true;
-            this.newButton.Click += new System.EventHandler(this.newButton_Click);
-            // 
-            // moveDownButton1
-            // 
-            this.moveDownButton1.Location = new System.Drawing.Point(129, 9);
-            this.moveDownButton1.Name = "moveDownButton1";
-            this.moveDownButton1.Size = new System.Drawing.Size(35, 25);
-            this.moveDownButton1.TabIndex = 41;
-            this.moveDownButton1.Text = "▽";
-            this.moveDownButton1.UseVisualStyleBackColor = true;
-            // 
-            // delScheduleButton
-            // 
-            this.delScheduleButton.Location = new System.Drawing.Point(47, 9);
-            this.delScheduleButton.Name = "delScheduleButton";
-            this.delScheduleButton.Size = new System.Drawing.Size(35, 25);
-            this.delScheduleButton.TabIndex = 39;
-            this.delScheduleButton.Text = "-";
-            this.delScheduleButton.UseVisualStyleBackColor = true;
-            this.delScheduleButton.Click += new System.EventHandler(this.delScheduleButton_Click);
-            // 
-            // moveUpButton2
-            // 
-            this.moveUpButton2.Location = new System.Drawing.Point(88, 9);
-            this.moveUpButton2.Name = "moveUpButton2";
-            this.moveUpButton2.Size = new System.Drawing.Size(35, 25);
-            this.moveUpButton2.TabIndex = 40;
-            this.moveUpButton2.Text = "△";
-            this.moveUpButton2.UseVisualStyleBackColor = true;
-            // 
-            // toolStrip2
-            // 
-            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pbStatus,
-            this.toolStripLabel1});
-            this.toolStrip2.Location = new System.Drawing.Point(3, 513);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip2.Size = new System.Drawing.Size(943, 25);
-            this.toolStrip2.TabIndex = 0;
-            this.toolStrip2.Text = "toolStrip2";
-            // 
-            // pbStatus
-            // 
-            this.pbStatus.Name = "pbStatus";
-            this.pbStatus.Size = new System.Drawing.Size(100, 22);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(0, 22);
-            // 
-            // backgroundWorker2
-            // 
-            this.backgroundWorker2.WorkerReportsProgress = true;
-            this.backgroundWorker2.WorkerSupportsCancellation = true;
-            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
-            this.backgroundWorker2.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker2_ProgressChanged);
-            this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
-            // 
-            // 打印ToolStripMenuItem
-            // 
-            this.打印ToolStripMenuItem.Name = "打印ToolStripMenuItem";
-            this.打印ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.打印ToolStripMenuItem.Text = "打印";
-            this.打印ToolStripMenuItem.Click += new System.EventHandler(this.打印ToolStripMenuItem_Click);
             // 
             // customer_name
             // 
@@ -532,6 +322,226 @@
             this.xinzeng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.xinzeng.Visible = false;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.删除ToolStripMenuItem,
+            this.保存ToolStripMenuItem,
+            this.打印ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(99, 70);
+            // 
+            // 删除ToolStripMenuItem
+            // 
+            this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.删除ToolStripMenuItem.Text = "删除";
+            this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
+            // 
+            // 保存ToolStripMenuItem
+            // 
+            this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
+            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.保存ToolStripMenuItem.Text = "保存";
+            this.保存ToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
+            // 
+            // 打印ToolStripMenuItem
+            // 
+            this.打印ToolStripMenuItem.Name = "打印ToolStripMenuItem";
+            this.打印ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.打印ToolStripMenuItem.Text = "打印";
+            this.打印ToolStripMenuItem.Click += new System.EventHandler(this.打印ToolStripMenuItem_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.label24);
+            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.filterButton);
+            this.groupBox2.Controls.Add(this.stockInDateTimePicker1);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.stockOutDateTimePicker);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.Location = new System.Drawing.Point(3, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(929, 92);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Action";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(471, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 15);
+            this.label1.TabIndex = 90;
+            this.label1.Text = "*如果查找所有请填写\"所有\"";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(15, 65);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(73, 20);
+            this.label24.TabIndex = 89;
+            this.label24.Text = "查找内容";
+            // 
+            // textBox8
+            // 
+            this.textBox8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Location = new System.Drawing.Point(109, 63);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(356, 26);
+            this.textBox8.TabIndex = 8;
+            this.textBox8.Enter += new System.EventHandler(this.textBox8_Enter);
+            // 
+            // filterButton
+            // 
+            this.filterButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.filterButton.Location = new System.Drawing.Point(825, 26);
+            this.filterButton.Name = "filterButton";
+            this.filterButton.Size = new System.Drawing.Size(101, 41);
+            this.filterButton.TabIndex = 78;
+            this.filterButton.Text = "查找";
+            this.filterButton.UseVisualStyleBackColor = true;
+            this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
+            // 
+            // stockInDateTimePicker1
+            // 
+            this.stockInDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockInDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.stockInDateTimePicker1.Location = new System.Drawing.Point(356, 22);
+            this.stockInDateTimePicker1.Name = "stockInDateTimePicker1";
+            this.stockInDateTimePicker1.Size = new System.Drawing.Size(109, 26);
+            this.stockInDateTimePicker1.TabIndex = 5;
+            this.stockInDateTimePicker1.Value = new System.DateTime(2017, 12, 31, 0, 0, 0, 0);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(263, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 20);
+            this.label4.TabIndex = 76;
+            this.label4.Text = "结束时间";
+            // 
+            // stockOutDateTimePicker
+            // 
+            this.stockOutDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockOutDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.stockOutDateTimePicker.Location = new System.Drawing.Point(109, 22);
+            this.stockOutDateTimePicker.Name = "stockOutDateTimePicker";
+            this.stockOutDateTimePicker.Size = new System.Drawing.Size(114, 26);
+            this.stockOutDateTimePicker.TabIndex = 4;
+            this.stockOutDateTimePicker.Value = new System.DateTime(2017, 3, 1, 0, 0, 0, 0);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(15, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "开始时间";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.newButton);
+            this.groupBox3.Controls.Add(this.moveDownButton1);
+            this.groupBox3.Controls.Add(this.delScheduleButton);
+            this.groupBox3.Controls.Add(this.moveUpButton2);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.groupBox3.Location = new System.Drawing.Point(3, 426);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(929, 41);
+            this.groupBox3.TabIndex = 42;
+            this.groupBox3.TabStop = false;
+            // 
+            // newButton
+            // 
+            this.newButton.Location = new System.Drawing.Point(6, 9);
+            this.newButton.Name = "newButton";
+            this.newButton.Size = new System.Drawing.Size(35, 25);
+            this.newButton.TabIndex = 38;
+            this.newButton.Text = "+";
+            this.newButton.UseVisualStyleBackColor = true;
+            this.newButton.Click += new System.EventHandler(this.newButton_Click);
+            // 
+            // moveDownButton1
+            // 
+            this.moveDownButton1.Location = new System.Drawing.Point(129, 9);
+            this.moveDownButton1.Name = "moveDownButton1";
+            this.moveDownButton1.Size = new System.Drawing.Size(35, 25);
+            this.moveDownButton1.TabIndex = 41;
+            this.moveDownButton1.Text = "▽";
+            this.moveDownButton1.UseVisualStyleBackColor = true;
+            // 
+            // delScheduleButton
+            // 
+            this.delScheduleButton.Location = new System.Drawing.Point(47, 9);
+            this.delScheduleButton.Name = "delScheduleButton";
+            this.delScheduleButton.Size = new System.Drawing.Size(35, 25);
+            this.delScheduleButton.TabIndex = 39;
+            this.delScheduleButton.Text = "-";
+            this.delScheduleButton.UseVisualStyleBackColor = true;
+            this.delScheduleButton.Click += new System.EventHandler(this.delScheduleButton_Click);
+            // 
+            // moveUpButton2
+            // 
+            this.moveUpButton2.Location = new System.Drawing.Point(88, 9);
+            this.moveUpButton2.Name = "moveUpButton2";
+            this.moveUpButton2.Size = new System.Drawing.Size(35, 25);
+            this.moveUpButton2.TabIndex = 40;
+            this.moveUpButton2.Text = "△";
+            this.moveUpButton2.UseVisualStyleBackColor = true;
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pbStatus,
+            this.toolStripLabel1});
+            this.toolStrip2.Location = new System.Drawing.Point(3, 513);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip2.Size = new System.Drawing.Size(943, 25);
+            this.toolStrip2.TabIndex = 0;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // pbStatus
+            // 
+            this.pbStatus.Name = "pbStatus";
+            this.pbStatus.Size = new System.Drawing.Size(100, 22);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(0, 22);
+            // 
+            // backgroundWorker2
+            // 
+            this.backgroundWorker2.WorkerReportsProgress = true;
+            this.backgroundWorker2.WorkerSupportsCancellation = true;
+            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
+            this.backgroundWorker2.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker2_ProgressChanged);
+            this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "actn020.gif");
+            // 
             // frmOrderMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -606,5 +616,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Input_Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn order_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn xinzeng;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

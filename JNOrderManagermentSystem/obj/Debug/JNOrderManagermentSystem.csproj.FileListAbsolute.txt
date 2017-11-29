@@ -41,3 +41,6 @@ C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrde
 C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\RdlCompile.compiled
 C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\bin\Debug\Report1.rdlc
 C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\JNOrderManagermentSystem.frmAlterShow.resources
+C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\JNOrderManagermentSystem.frmInfoCenter.resources
+C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\JNOrderManagermentSystem.frmLogCenter.resources
+C:\mysteap\work_office\ProjectOut\JN订单管理\JNOrderManagermentSystem\JNOrderManagermentSystem\obj\Debug\JNOrderManagermentSystem.frmIPconfing.resources

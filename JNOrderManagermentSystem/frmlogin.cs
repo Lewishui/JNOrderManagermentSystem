@@ -29,6 +29,10 @@ namespace JNOrderManagermentSystem
         private string ipadress;
         int logis = 0;
         private OrdersControl OrdersControl;
+        //存放要显示的信息
+        List<string> messages;
+        //要显示信息的下标索引
+        int index = 0;
 
 
         public frmlogin()
@@ -48,9 +52,24 @@ namespace JNOrderManagermentSystem
             string[] fileText = File.ReadAllLines(path);
             ipadress = "mongodb://" + fileText[0];
 
+            messages = new List<string>();
+            messages.Add("济南集成伟业工控电子有限公司订单管理系统  " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+
+            timer1.Interval = 12000;
+            timer1.Start();
+            timer1.Tick += timer1_Tick;
+
+
 
         }
+        void timer1_Tick(object sender, EventArgs e)
+        {
+            //滚动显示
+            index = (index + 1) % messages.Count;
+            //toolStripLabel9.Text = messages[index];
+            this.scrollingText1.ScrollText = messages[index];
 
+        }
         private void 关于系统ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             aboutbox.ShowDialog();
@@ -223,12 +242,12 @@ namespace JNOrderManagermentSystem
             try
             {
                 clsAllnew BusinessHelp = new clsAllnew();
-           
+
                 List<clsuserinfo> userlist_Server = new List<clsuserinfo>();
                 userlist_Server = BusinessHelp.findUser(txtSAPUserId.Text.Trim());
 
 
-                
+
                 if (userlist_Server[0].Btype == "lock")
                 {
                     MessageBox.Show("登录失败,账户已被锁定，请重试或联系系统管理员，谢谢", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -351,6 +370,8 @@ namespace JNOrderManagermentSystem
             //this.dockPanel2.Controls.Clear();
             //this.dockPanel2.Controls.Add(OrdersControl);
 
+            this.scrollingText1.Visible = true;
+            toolStrip1.Visible = false;
 
 
             if (OrdersControl == null)
@@ -370,6 +391,53 @@ namespace JNOrderManagermentSystem
             {
                 OrdersControl = null;
             }
+        }
+
+        private void 查询信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new frmLogCenter("");
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+
+        }
+
+        private void 服务器设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new frmIPconfing("");
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+
+
+        }
+
+        private void eToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<clsuserinfo> userlist_Server = new List<clsuserinfo>();
+            clsuserinfo item = new clsuserinfo();
+
+
+            item.name = "admin";
+            item.password = "123";
+            item.Btype = "Normal";
+            item.AdminIS = "true";
+            item.jigoudaima = "管理者";
+
+            item.Createdate = DateTime.Now.ToString("yyyy/MM/dd/HH");
+
+            userlist_Server.Add(item);
+            clsAllnew BusinessHelp = new clsAllnew();
+
+            BusinessHelp.createUser_Server(userlist_Server);
+
+            MessageBox.Show("创建用户成功！", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+
         }
     }
 }

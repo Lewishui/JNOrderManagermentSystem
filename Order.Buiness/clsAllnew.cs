@@ -586,5 +586,49 @@ namespace Order.Buiness
             ev.HasMorePages = (m_currentPageIndex < m_streams.Count);
         }
 
+        public List<clsLog_info> findLog(string findtext)
+        {
+            MySql.Data.MySqlClient.MySqlDataReader reader = MySqlHelper.ExecuteReader(findtext);
+            List<clsLog_info> ClaimReport_Server = new List<clsLog_info>();
+
+            while (reader.Read())
+            {
+                clsLog_info item = new clsLog_info();
+
+                item.Log_id = reader.GetInt32(0);
+                item.product_no = reader.GetString(1);
+
+                item.indent = reader.GetString(2);
+                item.indent_date = reader.GetString(3);
+
+                item.end_user = reader.GetString(4);
+
+                if (reader.GetString(5) != null && reader.GetString(5) != "")
+                    item.Input_Date = Convert.ToDateTime(reader.GetString(5));
+                item.vendor = reader.GetString(6);
+
+
+
+                ClaimReport_Server.Add(item);
+
+                //这里做数据处理....
+            }
+            return ClaimReport_Server;
+        }
+        public int updateLog_Server(string findtext)
+        {
+            int isrun = MySqlHelper.ExecuteSql(findtext);
+
+            return isrun;
+        }
+        public int deletelog(string name)
+        {
+            string sql2 = "delete from JNOrder_log where  Log_id='" + name + "'";
+            int isrun = MySqlHelper.ExecuteSql(sql2);
+
+            return isrun;
+
+        }
+     
     }
 }

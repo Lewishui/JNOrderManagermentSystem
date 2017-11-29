@@ -99,6 +99,18 @@
     <Compile Include="frmEdidUser.Designer.cs">
       <DependentUpon>frmEdidUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInfoCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInfoCenter.Designer.cs">
+      <DependentUpon>frmInfoCenter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIPconfing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIPconfing.Designer.cs">
+      <DependentUpon>frmIPconfing.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmlogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +169,12 @@
     <Compile Include="frmOrderMain.Designer.cs">
       <DependentUpon>frmOrderMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLogCenter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogCenter.Designer.cs">
+      <DependentUpon>frmLogCenter.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmAboutBox.resx">
       <DependentUpon>frmAboutBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +189,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdidUser.resx">
       <DependentUpon>frmEdidUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfoCenter.resx">
+      <DependentUpon>frmInfoCenter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIPconfing.resx">
+      <DependentUpon>frmIPconfing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmlogin.resx">
       <DependentUpon>frmlogin.cs</DependentUpon>
@@ -211,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogCenter.resx">
+      <DependentUpon>frmLogCenter.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Order.DB.clsOrderinfo.datasource" />
     <None Include="Properties\Settings.settings">
@@ -253,6 +280,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="7 %282%29.ico" />
+    <None Include="Resources\actn020.gif" />
+    <None Include="Resources\bestfit.gif" />
     <None Include="Resources\user 5c.png" />
     <None Include="Resources\039aca64ea8386f7b6f814cfad13c979.png" />
     <None Include="Resources\tools.ico" />

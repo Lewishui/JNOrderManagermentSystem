@@ -35,6 +35,15 @@ namespace JNOrderManagermentSystem
             //AdjustSubformSize(pendingOrderForm);
             //pendingOrderForm.InitializePager();
             //pendingOrderForm.ShowDialog(  );
+            var form = new frmInfoCenter("");
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+
+            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -53,6 +62,13 @@ namespace JNOrderManagermentSystem
             //waitToShipOrderForm.InitializeDataSource();
             //waitToShipOrderForm.ShowDialog();
 
+            var form = new frmLogCenter("");
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+            
         }
 
         private void shippedOrderButton_Click(object sender, EventArgs e)
@@ -64,6 +80,9 @@ namespace JNOrderManagermentSystem
             //AdjustSubformSize(shippingOrderForm);
             //shippingOrderForm.InitializeDataSource();
             //shippingOrderForm.ShowDialog();
+            //this.Close();
+            Application.Exit();
+
         }
 
         private void label1_Click_1(object sender, EventArgs e)

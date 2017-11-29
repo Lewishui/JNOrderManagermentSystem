@@ -191,19 +191,19 @@ namespace JNOrderManagermentSystem
             this.BindDataGridView();
         }
 
-        private void BindDataGridView()
-        {
-            if (Orderinfolist_Server != null)
+            private void BindDataGridView()
             {
+                if (Orderinfolist_Server != null)
+                {
 
-                sortableOrderList = new SortableBindingList<clsOrderinfo>(Orderinfolist_Server);
-                bindingSource1.DataSource = new SortableBindingList<clsOrderinfo>(Orderinfolist_Server);
-                dataGridView1.AutoGenerateColumns = false;
+                    sortableOrderList = new SortableBindingList<clsOrderinfo>(Orderinfolist_Server);
+                    bindingSource1.DataSource = new SortableBindingList<clsOrderinfo>(Orderinfolist_Server);
+                    dataGridView1.AutoGenerateColumns = false;
 
-                dataGridView1.DataSource = bindingSource1;
-                this.toolStripLabel1.Text = "条数：" + sortableOrderList.Count.ToString();
+                    dataGridView1.DataSource = bindingSource1;
+                    this.toolStripLabel1.Text = "条数：" + sortableOrderList.Count.ToString();
+                }
             }
-        }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -378,7 +378,7 @@ namespace JNOrderManagermentSystem
                     clsOrderinfo item = new clsOrderinfo();
 
                     item.customer_name = Convert.ToString(dataGridView1.Rows[i].Cells["customer_name"].EditedFormattedValue.ToString());
-
+                    if (dataGridView1.Rows[i].Cells["dinghuoshijian"].EditedFormattedValue.ToString()!="")
                     item.dinghuoshijian = Convert.ToDateTime(dataGridView1.Rows[i].Cells["dinghuoshijian"].EditedFormattedValue.ToString());
 
                     item.order_no = Convert.ToString(dataGridView1.Rows[i].Cells["order_no"].EditedFormattedValue.ToString());

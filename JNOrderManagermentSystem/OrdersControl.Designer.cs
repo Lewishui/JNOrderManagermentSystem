@@ -87,7 +87,7 @@
             this.shippingOrderButton.Name = "shippingOrderButton";
             this.shippingOrderButton.Size = new System.Drawing.Size(144, 58);
             this.shippingOrderButton.TabIndex = 3;
-            this.shippingOrderButton.Text = "待定";
+            this.shippingOrderButton.Text = "退出系统";
             this.shippingOrderButton.UseVisualStyleBackColor = true;
             this.shippingOrderButton.Click += new System.EventHandler(this.shippedOrderButton_Click);
             // 
