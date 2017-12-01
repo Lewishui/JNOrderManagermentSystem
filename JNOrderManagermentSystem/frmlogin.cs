@@ -195,6 +195,8 @@ namespace JNOrderManagermentSystem
                 MessageBox.Show("Please Contact your administrator !");
                 return;
             }
+            MessageBox.Show("当前为测试系统 !");
+
             #endregion
 
 
@@ -435,7 +437,7 @@ namespace JNOrderManagermentSystem
 
 
             BusinessHelp.deleteUSER(item.name);
-         
+
 
             BusinessHelp.createUser_Server(userlist_Server);
 
