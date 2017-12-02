@@ -32,7 +32,7 @@ namespace JNOrderManagermentSystem
         int cloumn = 0;
         private Hashtable dataGridChanges = null;
         DateTimePicker dtp = new DateTimePicker();  //这里实例化一个DateTimePicker控件  
-        Rectangle _Rectangle;  
+        Rectangle _Rectangle;
 
         public frmOrderMain(string user)
         {
@@ -165,7 +165,7 @@ namespace JNOrderManagermentSystem
         private void filterButton_Click(object sender, EventArgs e)
         {
             this.dataGridChanges = new Hashtable();
-          
+
             this.pbStatus.Value = 0;
             this.toolStripLabel1.Text = "";
 
@@ -190,22 +190,43 @@ namespace JNOrderManagermentSystem
             clsAllnew BusinessHelp = new clsAllnew();
             Orderinfolist_Server = new List<clsOrderinfo>();
             Orderinfolist_Server = BusinessHelp.findOrder(strSelect);
+            //1.预计交货时间-订货时间=2 天标记颜色
+            DateTime dt3;
+            DateTime dt2;
+            foreach (clsOrderinfo item in Orderinfolist_Server)
+            {
+                if (item.dinghuoshijian == null || item.dinghuoshijian.ToString() == "" || item.yujijiaohuoshijian == null || item.yujijiaohuoshijian.ToString() == "")
+                    continue;
+
+                dt3 = Convert.ToDateTime(item.dinghuoshijian);
+                dt2 = Convert.ToDateTime(item.yujijiaohuoshijian);
+
+                TimeSpan ts = dt2 - dt3;
+                int timeTotal = ts.Days;
+                if (timeTotal <= 2)
+                {
+                    item.Message = "False";
+
+                }
+            }
+
+
             this.BindDataGridView();
         }
 
-            private void BindDataGridView()
+        private void BindDataGridView()
+        {
+            if (Orderinfolist_Server != null)
             {
-                if (Orderinfolist_Server != null)
-                {
 
-                    sortableOrderList = new SortableBindingList<clsOrderinfo>(Orderinfolist_Server);
-                    bindingSource1.DataSource = new SortableBindingList<clsOrderinfo>(Orderinfolist_Server);
-                    dataGridView1.AutoGenerateColumns = false;
+                sortableOrderList = new SortableBindingList<clsOrderinfo>(Orderinfolist_Server);
+                bindingSource1.DataSource = new SortableBindingList<clsOrderinfo>(Orderinfolist_Server);
+                dataGridView1.AutoGenerateColumns = false;
 
-                    dataGridView1.DataSource = bindingSource1;
-                    this.toolStripLabel1.Text = "条数：" + sortableOrderList.Count.ToString();
-                }
+                dataGridView1.DataSource = bindingSource1;
+                this.toolStripLabel1.Text = "条数：" + sortableOrderList.Count.ToString();
             }
+        }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -287,6 +308,16 @@ namespace JNOrderManagermentSystem
                     e.CellStyle.SelectionBackColor = Color.DarkRed;
 
                 }
+                //
+                if (e.ColumnIndex == 18)
+                {
+                    //if (e.RowIndex > 0)
+                    {
+                        if (e.Value == "False")
+                            dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                    }
+                }
+
             }
             catch (Exception ex)
             {
@@ -380,8 +411,8 @@ namespace JNOrderManagermentSystem
                     clsOrderinfo item = new clsOrderinfo();
 
                     item.customer_name = Convert.ToString(dataGridView1.Rows[i].Cells["customer_name"].EditedFormattedValue.ToString());
-                    if (dataGridView1.Rows[i].Cells["dinghuoshijian"].EditedFormattedValue.ToString()!="")
-                    item.dinghuoshijian = Convert.ToDateTime(dataGridView1.Rows[i].Cells["dinghuoshijian"].EditedFormattedValue.ToString());
+                    if (dataGridView1.Rows[i].Cells["dinghuoshijian"].EditedFormattedValue.ToString() != "")
+                        item.dinghuoshijian = Convert.ToDateTime(dataGridView1.Rows[i].Cells["dinghuoshijian"].EditedFormattedValue.ToString());
 
                     item.order_no = Convert.ToString(dataGridView1.Rows[i].Cells["order_no"].EditedFormattedValue.ToString());
 
@@ -787,8 +818,8 @@ namespace JNOrderManagermentSystem
                 _Rectangle = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true); //得到所在单元格位置和大小  
                 dtp.Size = new Size(_Rectangle.Width, _Rectangle.Height); //把单元格大小赋给时间控件  
                 dtp.Location = new Point(_Rectangle.X, _Rectangle.Y); //把单元格位置赋给时间控件  
-                if (dataGridView1.CurrentCell.Value.ToString()!="01/01/0001 00:00:00")
-                dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
+                if (dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00")
+                    dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
                 dtp.Visible = true;  //可以显示控件了  
             }
             else if (e.ColumnIndex == 8)
@@ -797,7 +828,7 @@ namespace JNOrderManagermentSystem
                 dtp.Size = new Size(_Rectangle.Width, _Rectangle.Height); //把单元格大小赋给时间控件  
                 dtp.Location = new Point(_Rectangle.X, _Rectangle.Y); //把单元格位置赋给时间控件 
                 if (dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00")
-                dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
+                    dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
                 dtp.Visible = true;  //可以显示控件了  
             }
             else if (e.ColumnIndex == 9)
@@ -806,7 +837,7 @@ namespace JNOrderManagermentSystem
                 dtp.Size = new Size(_Rectangle.Width, _Rectangle.Height); //把单元格大小赋给时间控件  
                 dtp.Location = new Point(_Rectangle.X, _Rectangle.Y); //把单元格位置赋给时间控件  
                 if (dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00")
-                dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
+                    dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
                 dtp.Visible = true;  //可以显示控件了  
             }
             else if (e.ColumnIndex == 13)
@@ -815,7 +846,7 @@ namespace JNOrderManagermentSystem
                 dtp.Size = new Size(_Rectangle.Width, _Rectangle.Height); //把单元格大小赋给时间控件  
                 dtp.Location = new Point(_Rectangle.X, _Rectangle.Y); //把单元格位置赋给时间控件  
                 if (dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00")
-                dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
+                    dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
                 dtp.Visible = true;  //可以显示控件了  
             }
             else
@@ -840,7 +871,7 @@ namespace JNOrderManagermentSystem
         private void dataGridView1_Scroll(object sender, ScrollEventArgs e)
         {
             dtp.Visible = false;
-        }  
+        }
         private void textBox8_Enter(object sender, EventArgs e)
         {
             this.textBox8.AutoCompleteCustomSource.AddRange(new string[] {

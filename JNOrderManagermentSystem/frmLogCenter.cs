@@ -354,6 +354,7 @@ namespace JNOrderManagermentSystem
 
                     item.vendor = Convert.ToString(dataGridView1.Rows[i].Cells["vendor"].EditedFormattedValue.ToString());
 
+                    item.daohuoshijian = Convert.ToString(dataGridView1.Rows[i].Cells["daohuoshijian"].EditedFormattedValue.ToString());
                     item.xinzeng = Convert.ToString(dataGridView1.Rows[i].Cells["xinzeng"].EditedFormattedValue.ToString());
 
                     item.Input_Date = Convert.ToDateTime(DateTime.Now.ToString("yyyy/MM/dd"));
@@ -386,7 +387,10 @@ namespace JNOrderManagermentSystem
                     {
                         conditions += " ,vendor ='" + item.vendor + "'";
                     }
-
+                    if (item.daohuoshijian != null)
+                    {
+                        conditions += " ,daohuoshijian ='" + item.daohuoshijian + "'";
+                    }
 
                     if (item.Input_Date != null)
                     {

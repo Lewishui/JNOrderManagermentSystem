@@ -55,19 +55,20 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.vendor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.product_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.indent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.indent_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.end_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Input_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.xinzeng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.newButton = new System.Windows.Forms.Button();
             this.delScheduleButton = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vendor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.product_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.indent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.indent_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.end_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Input_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.daohuoshijian = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xinzeng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -326,6 +327,7 @@
             this.indent_date,
             this.end_user,
             this.Input_Date,
+            this.daohuoshijian,
             this.xinzeng});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -345,6 +347,53 @@
             this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.newButton);
+            this.groupBox3.Controls.Add(this.delScheduleButton);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.groupBox3.Location = new System.Drawing.Point(3, 375);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1079, 41);
+            this.groupBox3.TabIndex = 43;
+            this.groupBox3.TabStop = false;
+            // 
+            // newButton
+            // 
+            this.newButton.Location = new System.Drawing.Point(6, 9);
+            this.newButton.Name = "newButton";
+            this.newButton.Size = new System.Drawing.Size(35, 25);
+            this.newButton.TabIndex = 38;
+            this.newButton.Text = "+";
+            this.newButton.UseVisualStyleBackColor = true;
+            this.newButton.Click += new System.EventHandler(this.newButton_Click);
+            // 
+            // delScheduleButton
+            // 
+            this.delScheduleButton.Location = new System.Drawing.Point(47, 9);
+            this.delScheduleButton.Name = "delScheduleButton";
+            this.delScheduleButton.Size = new System.Drawing.Size(35, 25);
+            this.delScheduleButton.TabIndex = 39;
+            this.delScheduleButton.Text = "-";
+            this.delScheduleButton.UseVisualStyleBackColor = true;
+            this.delScheduleButton.Click += new System.EventHandler(this.delScheduleButton_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "actn020.gif");
+            // 
+            // backgroundWorker2
+            // 
+            this.backgroundWorker2.WorkerReportsProgress = true;
+            this.backgroundWorker2.WorkerSupportsCancellation = true;
+            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
+            this.backgroundWorker2.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker2_ProgressChanged);
+            this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
             // 
             // vendor
             // 
@@ -394,59 +443,20 @@
             this.Input_Date.Name = "Input_Date";
             this.Input_Date.Width = 147;
             // 
+            // daohuoshijian
+            // 
+            this.daohuoshijian.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.daohuoshijian.DataPropertyName = "daohuoshijian";
+            this.daohuoshijian.HeaderText = "到货时间";
+            this.daohuoshijian.Name = "daohuoshijian";
+            this.daohuoshijian.Width = 147;
+            // 
             // xinzeng
             // 
             this.xinzeng.DataPropertyName = "xinzeng";
             this.xinzeng.HeaderText = "xinzeng";
             this.xinzeng.Name = "xinzeng";
             this.xinzeng.Visible = false;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.newButton);
-            this.groupBox3.Controls.Add(this.delScheduleButton);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBox3.Location = new System.Drawing.Point(3, 375);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1079, 41);
-            this.groupBox3.TabIndex = 43;
-            this.groupBox3.TabStop = false;
-            // 
-            // newButton
-            // 
-            this.newButton.Location = new System.Drawing.Point(6, 9);
-            this.newButton.Name = "newButton";
-            this.newButton.Size = new System.Drawing.Size(35, 25);
-            this.newButton.TabIndex = 38;
-            this.newButton.Text = "+";
-            this.newButton.UseVisualStyleBackColor = true;
-            this.newButton.Click += new System.EventHandler(this.newButton_Click);
-            // 
-            // delScheduleButton
-            // 
-            this.delScheduleButton.Location = new System.Drawing.Point(47, 9);
-            this.delScheduleButton.Name = "delScheduleButton";
-            this.delScheduleButton.Size = new System.Drawing.Size(35, 25);
-            this.delScheduleButton.TabIndex = 39;
-            this.delScheduleButton.Text = "-";
-            this.delScheduleButton.UseVisualStyleBackColor = true;
-            this.delScheduleButton.Click += new System.EventHandler(this.delScheduleButton_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "actn020.gif");
-            // 
-            // backgroundWorker2
-            // 
-            this.backgroundWorker2.WorkerReportsProgress = true;
-            this.backgroundWorker2.WorkerSupportsCancellation = true;
-            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
-            this.backgroundWorker2.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker2_ProgressChanged);
-            this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
             // 
             // frmLogCenter
             // 
@@ -512,6 +522,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn indent_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn end_user;
         private System.Windows.Forms.DataGridViewTextBoxColumn Input_Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn daohuoshijian;
         private System.Windows.Forms.DataGridViewTextBoxColumn xinzeng;
     }
 }

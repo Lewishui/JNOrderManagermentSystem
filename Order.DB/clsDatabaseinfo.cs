@@ -60,6 +60,10 @@ namespace Order.DB
         public DateTime Input_Date { get; set; }
         //新增的标记
         public string xinzeng { get; set; }
+     
+        //
+        public string Message { get; set; }
+      
     }
     //产品型号	订货数量	订货日期	使用单位
 
@@ -71,7 +75,8 @@ namespace Order.DB
         public string indent_date { get; set; }
         public string end_user { get; set; }
         public string vendor { get; set; }
-       
+        public string daohuoshijian { get; set; }
+   
         public DateTime Input_Date { get; set; }
         //新增的标记
         public string xinzeng { get; set; }

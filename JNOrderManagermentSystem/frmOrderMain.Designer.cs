@@ -36,24 +36,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.customer_name = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dinghuoshijian = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.order_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_no = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Product_name = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.shuliang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_salse = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.jine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yujijiaohuoshijian = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jianhuoshijian2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dingdanguanliyuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kaipiao = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.shifoujiaohuo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.fukuanriqi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.beizhu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Input_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.order_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.xinzeng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,12 +54,31 @@
             this.moveDownButton1 = new System.Windows.Forms.Button();
             this.delScheduleButton = new System.Windows.Forms.Button();
             this.moveUpButton2 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.pbStatus = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.customer_name = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dinghuoshijian = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.order_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_no = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Product_name = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.shuliang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_salse = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.jine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yujijiaohuoshijian = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jianhuoshijian2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dingdanguanliyuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kaipiao = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.shifoujiaohuo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.fukuanriqi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.beizhu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Input_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.order_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xinzeng = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Message = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -171,7 +172,8 @@
             this.beizhu,
             this.Input_Date,
             this.order_id,
-            this.xinzeng});
+            this.xinzeng,
+            this.Message});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 95);
@@ -186,141 +188,6 @@
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
-            // 
-            // customer_name
-            // 
-            this.customer_name.DataPropertyName = "customer_name";
-            this.customer_name.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.customer_name.HeaderText = "客户";
-            this.customer_name.Name = "customer_name";
-            this.customer_name.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.customer_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dinghuoshijian
-            // 
-            this.dinghuoshijian.DataPropertyName = "dinghuoshijian";
-            this.dinghuoshijian.HeaderText = "订货时间";
-            this.dinghuoshijian.Name = "dinghuoshijian";
-            // 
-            // order_no
-            // 
-            this.order_no.DataPropertyName = "order_no";
-            this.order_no.HeaderText = "订单号";
-            this.order_no.Name = "order_no";
-            // 
-            // Product_no
-            // 
-            this.Product_no.DataPropertyName = "Product_no";
-            this.Product_no.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Product_no.HeaderText = "产品型号";
-            this.Product_no.Name = "Product_no";
-            this.Product_no.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Product_no.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Product_name
-            // 
-            this.Product_name.DataPropertyName = "Product_name";
-            this.Product_name.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Product_name.HeaderText = "名称";
-            this.Product_name.Name = "Product_name";
-            this.Product_name.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Product_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // shuliang
-            // 
-            this.shuliang.DataPropertyName = "shuliang";
-            this.shuliang.HeaderText = "数量";
-            this.shuliang.Name = "shuliang";
-            // 
-            // Product_salse
-            // 
-            this.Product_salse.DataPropertyName = "Product_salse";
-            this.Product_salse.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Product_salse.HeaderText = "单价";
-            this.Product_salse.Name = "Product_salse";
-            this.Product_salse.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Product_salse.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // jine
-            // 
-            this.jine.DataPropertyName = "jine";
-            this.jine.HeaderText = "金额";
-            this.jine.Name = "jine";
-            // 
-            // yujijiaohuoshijian
-            // 
-            this.yujijiaohuoshijian.DataPropertyName = "yujijiaohuoshijian";
-            this.yujijiaohuoshijian.HeaderText = "预计交货时间";
-            this.yujijiaohuoshijian.Name = "yujijiaohuoshijian";
-            // 
-            // jianhuoshijian2
-            // 
-            this.jianhuoshijian2.DataPropertyName = "jianhuoshijian2";
-            this.jianhuoshijian2.HeaderText = "交货时间2";
-            this.jianhuoshijian2.Name = "jianhuoshijian2";
-            // 
-            // dingdanguanliyuan
-            // 
-            this.dingdanguanliyuan.DataPropertyName = "dingdanguanliyuan";
-            this.dingdanguanliyuan.HeaderText = "订单管理员";
-            this.dingdanguanliyuan.Name = "dingdanguanliyuan";
-            // 
-            // kaipiao
-            // 
-            this.kaipiao.DataPropertyName = "kaipiao";
-            this.kaipiao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.kaipiao.HeaderText = "开票";
-            this.kaipiao.Items.AddRange(new object[] {
-            "是",
-            "否"});
-            this.kaipiao.Name = "kaipiao";
-            this.kaipiao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.kaipiao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // shifoujiaohuo
-            // 
-            this.shifoujiaohuo.DataPropertyName = "shifoujiaohuo";
-            this.shifoujiaohuo.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.shifoujiaohuo.HeaderText = "是否交货";
-            this.shifoujiaohuo.Items.AddRange(new object[] {
-            "是",
-            "否"});
-            this.shifoujiaohuo.Name = "shifoujiaohuo";
-            this.shifoujiaohuo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.shifoujiaohuo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // fukuanriqi
-            // 
-            this.fukuanriqi.DataPropertyName = "fukuanriqi";
-            this.fukuanriqi.HeaderText = "付款日期";
-            this.fukuanriqi.Name = "fukuanriqi";
-            // 
-            // beizhu
-            // 
-            this.beizhu.DataPropertyName = "beizhu";
-            this.beizhu.HeaderText = "备注";
-            this.beizhu.Name = "beizhu";
-            // 
-            // Input_Date
-            // 
-            this.Input_Date.DataPropertyName = "Input_Date";
-            this.Input_Date.HeaderText = "录入时间";
-            this.Input_Date.Name = "Input_Date";
-            // 
-            // order_id
-            // 
-            this.order_id.DataPropertyName = "order_id";
-            this.order_id.HeaderText = "order_id";
-            this.order_id.Name = "order_id";
-            this.order_id.Visible = false;
-            // 
-            // xinzeng
-            // 
-            this.xinzeng.DataPropertyName = "xinzeng";
-            this.xinzeng.HeaderText = "xinzeng";
-            this.xinzeng.Name = "xinzeng";
-            this.xinzeng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.xinzeng.Visible = false;
             // 
             // contextMenuStrip1
             // 
@@ -505,6 +372,12 @@
             this.moveUpButton2.Text = "△";
             this.moveUpButton2.UseVisualStyleBackColor = true;
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "actn020.gif");
+            // 
             // toolStrip2
             // 
             this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -536,11 +409,146 @@
             this.backgroundWorker2.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker2_ProgressChanged);
             this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
             // 
-            // imageList1
+            // customer_name
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "actn020.gif");
+            this.customer_name.DataPropertyName = "customer_name";
+            this.customer_name.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.customer_name.HeaderText = "客户";
+            this.customer_name.Name = "customer_name";
+            this.customer_name.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.customer_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dinghuoshijian
+            // 
+            this.dinghuoshijian.DataPropertyName = "dinghuoshijian";
+            this.dinghuoshijian.HeaderText = "订货时间";
+            this.dinghuoshijian.Name = "dinghuoshijian";
+            // 
+            // order_no
+            // 
+            this.order_no.DataPropertyName = "order_no";
+            this.order_no.HeaderText = "订单号";
+            this.order_no.Name = "order_no";
+            // 
+            // Product_no
+            // 
+            this.Product_no.DataPropertyName = "Product_no";
+            this.Product_no.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Product_no.HeaderText = "产品型号";
+            this.Product_no.Name = "Product_no";
+            this.Product_no.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Product_no.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Product_name
+            // 
+            this.Product_name.DataPropertyName = "Product_name";
+            this.Product_name.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Product_name.HeaderText = "名称";
+            this.Product_name.Name = "Product_name";
+            this.Product_name.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Product_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // shuliang
+            // 
+            this.shuliang.DataPropertyName = "shuliang";
+            this.shuliang.HeaderText = "数量";
+            this.shuliang.Name = "shuliang";
+            // 
+            // Product_salse
+            // 
+            this.Product_salse.DataPropertyName = "Product_salse";
+            this.Product_salse.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Product_salse.HeaderText = "单价";
+            this.Product_salse.Name = "Product_salse";
+            this.Product_salse.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Product_salse.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // jine
+            // 
+            this.jine.DataPropertyName = "jine";
+            this.jine.HeaderText = "金额";
+            this.jine.Name = "jine";
+            // 
+            // yujijiaohuoshijian
+            // 
+            this.yujijiaohuoshijian.DataPropertyName = "yujijiaohuoshijian";
+            this.yujijiaohuoshijian.HeaderText = "预计交货时间";
+            this.yujijiaohuoshijian.Name = "yujijiaohuoshijian";
+            // 
+            // jianhuoshijian2
+            // 
+            this.jianhuoshijian2.DataPropertyName = "jianhuoshijian2";
+            this.jianhuoshijian2.HeaderText = "交货时间2";
+            this.jianhuoshijian2.Name = "jianhuoshijian2";
+            // 
+            // dingdanguanliyuan
+            // 
+            this.dingdanguanliyuan.DataPropertyName = "dingdanguanliyuan";
+            this.dingdanguanliyuan.HeaderText = "订单管理员";
+            this.dingdanguanliyuan.Name = "dingdanguanliyuan";
+            // 
+            // kaipiao
+            // 
+            this.kaipiao.DataPropertyName = "kaipiao";
+            this.kaipiao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.kaipiao.HeaderText = "开票";
+            this.kaipiao.Items.AddRange(new object[] {
+            "是",
+            "否"});
+            this.kaipiao.Name = "kaipiao";
+            this.kaipiao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.kaipiao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // shifoujiaohuo
+            // 
+            this.shifoujiaohuo.DataPropertyName = "shifoujiaohuo";
+            this.shifoujiaohuo.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.shifoujiaohuo.HeaderText = "是否交货";
+            this.shifoujiaohuo.Items.AddRange(new object[] {
+            "是",
+            "否"});
+            this.shifoujiaohuo.Name = "shifoujiaohuo";
+            this.shifoujiaohuo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.shifoujiaohuo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // fukuanriqi
+            // 
+            this.fukuanriqi.DataPropertyName = "fukuanriqi";
+            this.fukuanriqi.HeaderText = "付款日期";
+            this.fukuanriqi.Name = "fukuanriqi";
+            // 
+            // beizhu
+            // 
+            this.beizhu.DataPropertyName = "beizhu";
+            this.beizhu.HeaderText = "备注";
+            this.beizhu.Name = "beizhu";
+            // 
+            // Input_Date
+            // 
+            this.Input_Date.DataPropertyName = "Input_Date";
+            this.Input_Date.HeaderText = "录入时间";
+            this.Input_Date.Name = "Input_Date";
+            // 
+            // order_id
+            // 
+            this.order_id.DataPropertyName = "order_id";
+            this.order_id.HeaderText = "order_id";
+            this.order_id.Name = "order_id";
+            this.order_id.Visible = false;
+            // 
+            // xinzeng
+            // 
+            this.xinzeng.DataPropertyName = "xinzeng";
+            this.xinzeng.HeaderText = "xinzeng";
+            this.xinzeng.Name = "xinzeng";
+            this.xinzeng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.xinzeng.Visible = false;
+            // 
+            // Message
+            // 
+            this.Message.DataPropertyName = "Message";
+            this.Message.HeaderText = "Message";
+            this.Message.Name = "Message";
             // 
             // frmOrderMain
             // 
@@ -598,6 +606,7 @@
         private System.Windows.Forms.Button moveUpButton2;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.ToolStripMenuItem 打印ToolStripMenuItem;
+        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.DataGridViewComboBoxColumn customer_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn dinghuoshijian;
         private System.Windows.Forms.DataGridViewTextBoxColumn order_no;
@@ -616,6 +625,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Input_Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn order_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn xinzeng;
-        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Message;
     }
 }

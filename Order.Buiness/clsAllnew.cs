@@ -606,6 +606,8 @@ namespace Order.Buiness
                 if (reader.GetString(5) != null && reader.GetString(5) != "")
                     item.Input_Date = Convert.ToDateTime(reader.GetString(5));
                 item.vendor = reader.GetString(6);
+                if (reader.GetString(7) != null && reader.GetString(7) != "")
+                item.daohuoshijian = reader.GetString(7);
 
 
 
