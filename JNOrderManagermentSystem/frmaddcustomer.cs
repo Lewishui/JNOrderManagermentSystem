@@ -30,7 +30,7 @@ namespace JNOrderManagermentSystem
                 int ISURN = BusinessHelp.create_customer_Server(userlist_Server);
                 if (ISURN == 1)
                 {
-            
+
                     if (MessageBox.Show(" 客户创建成功 , 是否继续添加 ?", "Info", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         clear();
@@ -57,6 +57,14 @@ namespace JNOrderManagermentSystem
             userlist_Server = new List<clscustomerinfo>();
 
             clscustomerinfo item = new clscustomerinfo();
+            if (item.customer_name == null || item.customer_name == "")
+            {
+                errorProvider1.SetError(txname, "不能为空");
+                return;
+            }
+            else
+                errorProvider1.SetError(txname, String.Empty);
+
             item.customer_name = this.txname.Text;
             item.customer_adress = this.txadress.Text;
             item.customer_shuihao = this.tshuihao.Text;
@@ -77,6 +85,13 @@ namespace JNOrderManagermentSystem
             txaccount.Text = "";
             txphone.Text = "";
             txcontact.Text = "";
+        }
+
+        private void txname_TextChanged(object sender, EventArgs e)
+        {
+            if (txname.Text !=
+                "")
+                errorProvider1.SetError(txname, String.Empty);
         }
     }
 }

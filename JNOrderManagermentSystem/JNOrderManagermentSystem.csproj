@@ -69,6 +69,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrystalButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalButton.designer.cs">
+      <DependentUpon>CrystalButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +286,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="7 %282%29.ico" />
+    <None Include="Resources\psd24876_1副本.jpg" />
     <None Include="Resources\actn020.gif" />
     <None Include="Resources\bestfit.gif" />
     <None Include="Resources\user 5c.png" />

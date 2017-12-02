@@ -28,140 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pendingButton = new System.Windows.Forms.Button();
-            this.receiveOrderButton = new System.Windows.Forms.Button();
-            this.waitToShipButton = new System.Windows.Forms.Button();
-            this.shippingOrderButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.orderConfirmButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.contentPanel = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.newButton = new System.Windows.Forms.Button();
+            this.crystalButton6 = new JNOrderManagermentSystem.CrystalButton();
+            this.crystalButton5 = new JNOrderManagermentSystem.CrystalButton();
+            this.crystalButton4 = new JNOrderManagermentSystem.CrystalButton();
+            this.crystalButton3 = new JNOrderManagermentSystem.CrystalButton();
+            this.crystalButton2 = new JNOrderManagermentSystem.CrystalButton();
+            this.crystalButton1 = new JNOrderManagermentSystem.CrystalButton();
             this.contentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pendingButton
-            // 
-            this.pendingButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pendingButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.pendingButton.Location = new System.Drawing.Point(222, 195);
-            this.pendingButton.Name = "pendingButton";
-            this.pendingButton.Size = new System.Drawing.Size(144, 58);
-            this.pendingButton.TabIndex = 1;
-            this.pendingButton.Text = "信息中心";
-            this.pendingButton.UseVisualStyleBackColor = true;
-            this.pendingButton.Click += new System.EventHandler(this.pendingButton_Click);
-            // 
-            // receiveOrderButton
-            // 
-            this.receiveOrderButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.receiveOrderButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.receiveOrderButton.Location = new System.Drawing.Point(21, 68);
-            this.receiveOrderButton.Name = "receiveOrderButton";
-            this.receiveOrderButton.Size = new System.Drawing.Size(180, 58);
-            this.receiveOrderButton.TabIndex = 4;
-            this.receiveOrderButton.Text = "客户";
-            this.receiveOrderButton.UseVisualStyleBackColor = true;
-            this.receiveOrderButton.Click += new System.EventHandler(this.receiveOrderButton_Click);
-            // 
-            // waitToShipButton
-            // 
-            this.waitToShipButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.waitToShipButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.waitToShipButton.Location = new System.Drawing.Point(423, 195);
-            this.waitToShipButton.Name = "waitToShipButton";
-            this.waitToShipButton.Size = new System.Drawing.Size(144, 58);
-            this.waitToShipButton.TabIndex = 2;
-            this.waitToShipButton.Text = "工作日志";
-            this.waitToShipButton.UseVisualStyleBackColor = true;
-            this.waitToShipButton.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // shippingOrderButton
-            // 
-            this.shippingOrderButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.shippingOrderButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.shippingOrderButton.Location = new System.Drawing.Point(624, 195);
-            this.shippingOrderButton.Name = "shippingOrderButton";
-            this.shippingOrderButton.Size = new System.Drawing.Size(144, 58);
-            this.shippingOrderButton.TabIndex = 3;
-            this.shippingOrderButton.Text = "退出系统";
-            this.shippingOrderButton.UseVisualStyleBackColor = true;
-            this.shippingOrderButton.Click += new System.EventHandler(this.shippedOrderButton_Click);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(380, 216);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 19);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "->";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(581, 216);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 19);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "->";
-            // 
-            // orderConfirmButton
-            // 
-            this.orderConfirmButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.orderConfirmButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.orderConfirmButton.Location = new System.Drawing.Point(588, 68);
-            this.orderConfirmButton.Name = "orderConfirmButton";
-            this.orderConfirmButton.Size = new System.Drawing.Size(180, 58);
-            this.orderConfirmButton.TabIndex = 5;
-            this.orderConfirmButton.Text = "产品";
-            this.orderConfirmButton.UseVisualStyleBackColor = true;
-            this.orderConfirmButton.Click += new System.EventHandler(this.orderConfirmButton_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(84, 136);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(19, 57);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "|\r\n|\r\nV";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(687, 136);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(19, 57);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "|\r\n|\r\nV";
-            // 
             // contentPanel
             // 
-            this.contentPanel.BackColor = System.Drawing.SystemColors.Control;
-            this.contentPanel.Controls.Add(this.label5);
-            this.contentPanel.Controls.Add(this.newButton);
-            this.contentPanel.Controls.Add(this.orderConfirmButton);
-            this.contentPanel.Controls.Add(this.label4);
-            this.contentPanel.Controls.Add(this.pendingButton);
-            this.contentPanel.Controls.Add(this.label1);
-            this.contentPanel.Controls.Add(this.receiveOrderButton);
-            this.contentPanel.Controls.Add(this.waitToShipButton);
-            this.contentPanel.Controls.Add(this.label3);
-            this.contentPanel.Controls.Add(this.shippingOrderButton);
-            this.contentPanel.Controls.Add(this.label2);
+            this.contentPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.contentPanel.Controls.Add(this.crystalButton6);
+            this.contentPanel.Controls.Add(this.crystalButton5);
+            this.contentPanel.Controls.Add(this.crystalButton4);
+            this.contentPanel.Controls.Add(this.crystalButton3);
+            this.contentPanel.Controls.Add(this.crystalButton2);
+            this.contentPanel.Controls.Add(this.crystalButton1);
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.contentPanel.Location = new System.Drawing.Point(0, 0);
@@ -169,28 +54,83 @@
             this.contentPanel.Size = new System.Drawing.Size(796, 403);
             this.contentPanel.TabIndex = 0;
             // 
-            // label5
+            // crystalButton6
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(179, 216);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 19);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "->";
+            this.crystalButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.crystalButton6.BackColor = System.Drawing.Color.Red;
+            this.crystalButton6.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
+            this.crystalButton6.Location = new System.Drawing.Point(655, 333);
+            this.crystalButton6.Name = "crystalButton6";
+            this.crystalButton6.Size = new System.Drawing.Size(129, 58);
+            this.crystalButton6.TabIndex = 11;
+            this.crystalButton6.Text = "退出系统";
+            this.crystalButton6.UseVisualStyleBackColor = false;
+            this.crystalButton6.Click += new System.EventHandler(this.shippedOrderButton_Click);
             // 
-            // newButton
+            // crystalButton5
             // 
-            this.newButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.newButton.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.newButton.Location = new System.Drawing.Point(21, 195);
-            this.newButton.Name = "newButton";
-            this.newButton.Size = new System.Drawing.Size(144, 58);
-            this.newButton.TabIndex = 0;
-            this.newButton.Text = "订单";
-            this.newButton.UseVisualStyleBackColor = true;
-            this.newButton.Click += new System.EventHandler(this.newButton_Click);
+            this.crystalButton5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.crystalButton5.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.crystalButton5.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
+            this.crystalButton5.Location = new System.Drawing.Point(202, 284);
+            this.crystalButton5.Name = "crystalButton5";
+            this.crystalButton5.Size = new System.Drawing.Size(309, 58);
+            this.crystalButton5.TabIndex = 10;
+            this.crystalButton5.Text = "工作日志";
+            this.crystalButton5.UseVisualStyleBackColor = false;
+            this.crystalButton5.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // crystalButton4
+            // 
+            this.crystalButton4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.crystalButton4.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.crystalButton4.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
+            this.crystalButton4.Location = new System.Drawing.Point(202, 216);
+            this.crystalButton4.Name = "crystalButton4";
+            this.crystalButton4.Size = new System.Drawing.Size(309, 58);
+            this.crystalButton4.TabIndex = 9;
+            this.crystalButton4.Text = "信息中心";
+            this.crystalButton4.UseVisualStyleBackColor = false;
+            this.crystalButton4.Click += new System.EventHandler(this.pendingButton_Click);
+            // 
+            // crystalButton3
+            // 
+            this.crystalButton3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.crystalButton3.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.crystalButton3.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
+            this.crystalButton3.Location = new System.Drawing.Point(202, 148);
+            this.crystalButton3.Name = "crystalButton3";
+            this.crystalButton3.Size = new System.Drawing.Size(309, 58);
+            this.crystalButton3.TabIndex = 8;
+            this.crystalButton3.Text = "订单";
+            this.crystalButton3.UseVisualStyleBackColor = false;
+            this.crystalButton3.Click += new System.EventHandler(this.newButton_Click);
+            // 
+            // crystalButton2
+            // 
+            this.crystalButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.crystalButton2.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.crystalButton2.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
+            this.crystalButton2.Location = new System.Drawing.Point(202, 80);
+            this.crystalButton2.Name = "crystalButton2";
+            this.crystalButton2.Size = new System.Drawing.Size(309, 58);
+            this.crystalButton2.TabIndex = 7;
+            this.crystalButton2.Text = "产品";
+            this.crystalButton2.UseVisualStyleBackColor = false;
+            this.crystalButton2.Click += new System.EventHandler(this.orderConfirmButton_Click);
+            // 
+            // crystalButton1
+            // 
+            this.crystalButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.crystalButton1.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.crystalButton1.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
+            this.crystalButton1.Location = new System.Drawing.Point(202, 12);
+            this.crystalButton1.Name = "crystalButton1";
+            this.crystalButton1.Size = new System.Drawing.Size(309, 58);
+            this.crystalButton1.TabIndex = 6;
+            this.crystalButton1.Text = "客户";
+            this.crystalButton1.UseVisualStyleBackColor = false;
+            this.crystalButton1.Click += new System.EventHandler(this.receiveOrderButton_Click);
             // 
             // OrdersControl
             // 
@@ -208,24 +148,18 @@
             this.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.OrdersControl_ControlRemoved);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.OrdersControl_Paint);
             this.contentPanel.ResumeLayout(false);
-            this.contentPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button pendingButton;
-        private System.Windows.Forms.Button receiveOrderButton;
-        private System.Windows.Forms.Button waitToShipButton;
-        private System.Windows.Forms.Button shippingOrderButton;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button orderConfirmButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel contentPanel;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button newButton;
+        private CrystalButton crystalButton1;
+        private CrystalButton crystalButton5;
+        private CrystalButton crystalButton4;
+        private CrystalButton crystalButton3;
+        private CrystalButton crystalButton2;
+        private CrystalButton crystalButton6;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txcontact = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txaccount = new System.Windows.Forms.TextBox();
@@ -44,6 +45,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tshuihao = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txcontact
@@ -110,6 +113,7 @@
             this.txname.Name = "txname";
             this.txname.Size = new System.Drawing.Size(306, 28);
             this.txname.TabIndex = 0;
+            this.txname.TextChanged += new System.EventHandler(this.txname_TextChanged);
             // 
             // label13
             // 
@@ -195,6 +199,10 @@
             this.tshuihao.Size = new System.Drawing.Size(306, 28);
             this.tshuihao.TabIndex = 2;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmaddcustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,6 +228,7 @@
             this.Name = "frmaddcustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "新增客户";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,5 +253,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox tshuihao;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

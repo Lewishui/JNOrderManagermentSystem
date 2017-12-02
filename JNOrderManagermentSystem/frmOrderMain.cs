@@ -164,6 +164,8 @@ namespace JNOrderManagermentSystem
 
         private void filterButton_Click(object sender, EventArgs e)
         {
+            this.dataGridChanges = new Hashtable();
+          
             this.pbStatus.Value = 0;
             this.toolStripLabel1.Text = "";
 

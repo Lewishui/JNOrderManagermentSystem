@@ -62,9 +62,9 @@
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.关于系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.服务器设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scrollingText1 = new Order.Common.ScrollingText();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -86,7 +86,7 @@
             this.dockPanel2.ActiveAutoHideContent = null;
             this.dockPanel2.AutoScroll = true;
             this.dockPanel2.BackColor = System.Drawing.SystemColors.Control;
-            this.dockPanel2.BackgroundImage = global::JNOrderManagermentSystem.Properties.Resources._1;
+            this.dockPanel2.BackgroundImage = global::JNOrderManagermentSystem.Properties.Resources.psd24876_1副本;
             this.dockPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.dockPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dockPanel2.DockBackColor = System.Drawing.Color.Transparent;
@@ -205,14 +205,14 @@
             // 导入彩票数据ToolStripMenuItem
             // 
             this.导入彩票数据ToolStripMenuItem.Name = "导入彩票数据ToolStripMenuItem";
-            this.导入彩票数据ToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.导入彩票数据ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.导入彩票数据ToolStripMenuItem.Text = "主页面";
             this.导入彩票数据ToolStripMenuItem.Click += new System.EventHandler(this.导入彩票数据ToolStripMenuItem_Click);
             // 
             // 查询信息ToolStripMenuItem
             // 
             this.查询信息ToolStripMenuItem.Name = "查询信息ToolStripMenuItem";
-            this.查询信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.查询信息ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.查询信息ToolStripMenuItem.Text = "工作日志";
             this.查询信息ToolStripMenuItem.Click += new System.EventHandler(this.查询信息ToolStripMenuItem_Click);
             // 
