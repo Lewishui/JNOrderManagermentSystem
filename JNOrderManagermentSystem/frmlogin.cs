@@ -227,6 +227,7 @@ namespace JNOrderManagermentSystem
                     ProcessLogger.Fatal("07935:System Login Start " + DateTime.Now.ToString());
                     #endregion
                     this.WindowState = FormWindowState.Maximized;
+                    tsbLogin.Text = "登录成功";
                 }
             }
             catch (Exception ex)

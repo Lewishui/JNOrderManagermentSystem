@@ -33,6 +33,9 @@ namespace JNOrderManagermentSystem
         private Hashtable dataGridChanges = null;
         DateTimePicker dtp = new DateTimePicker();  //这里实例化一个DateTimePicker控件  
         Rectangle _Rectangle;
+        DataGridViewCellEventArgs eshar;
+        bool changedtp;
+
 
         public frmOrderMain(string user)
         {
@@ -56,8 +59,10 @@ namespace JNOrderManagermentSystem
             dtp.ShowUpDown = true;
             dtp.Format = DateTimePickerFormat.Custom;  //设置日期格式为2010-08-05  
             dtp.CustomFormat = "yyyy/MM/dd";
+            //  dtp.CustomFormat = "MMMM dd, yyyy - dddd";
             dtp.TextChanged += new EventHandler(dtp_TextChange); //为时间控件加入事件dtp_TextChange  
 
+            changedtp = false;
 
         }
 
@@ -309,12 +314,12 @@ namespace JNOrderManagermentSystem
 
                 }
                 //
-                if (e.ColumnIndex == 18)
+                if (e.ColumnIndex == 0)//18
                 {
                     //if (e.RowIndex > 0)
                     {
                         if (e.Value == "False")
-                            dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                            dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
                     }
                 }
 
@@ -813,40 +818,104 @@ namespace JNOrderManagermentSystem
 
             RowRemark = e.RowIndex;
             cloumn = e.ColumnIndex;
-            if (e.ColumnIndex == 1)
+            if (e.ColumnIndex == 2)
             {
                 _Rectangle = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true); //得到所在单元格位置和大小  
                 dtp.Size = new Size(_Rectangle.Width, _Rectangle.Height); //把单元格大小赋给时间控件  
                 dtp.Location = new Point(_Rectangle.X, _Rectangle.Y); //把单元格位置赋给时间控件  
-                if (dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00")
+                if (dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00" && dataGridView1.CurrentCell.Value.ToString() != "0001/1/1 0:00:00")//0001/1/1 0:00:00
+                {
                     dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
-                dtp.Visible = true;  //可以显示控件了  
-            }
-            else if (e.ColumnIndex == 8)
-            {
-                _Rectangle = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true); //得到所在单元格位置和大小  
-                dtp.Size = new Size(_Rectangle.Width, _Rectangle.Height); //把单元格大小赋给时间控件  
-                dtp.Location = new Point(_Rectangle.X, _Rectangle.Y); //把单元格位置赋给时间控件 
-                if (dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00")
-                    dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
+                    dataGridView1.Rows[RowRemark].Cells[cloumn].Value = dtp.Value;
+                    //由于日期列无法抓取更改事件标记颜色 只能 点击就变色
+
+
+                    if (changedtp == true)
+                    {
+                        mark_datagridchanges(e);
+                        changedtp = false;
+
+                    }
+
+                }
+                else
+                {
+                    dtp.Value = DateTime.Now;
+                    dataGridView1.CurrentCell.Value = DateTime.Now;
+                }
+                //   dtp.Value = Convert.ToDateTime(clsCommHelp.objToDateTime(dataGridView1.CurrentCell.Value.ToString()));
                 dtp.Visible = true;  //可以显示控件了  
             }
             else if (e.ColumnIndex == 9)
             {
                 _Rectangle = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true); //得到所在单元格位置和大小  
                 dtp.Size = new Size(_Rectangle.Width, _Rectangle.Height); //把单元格大小赋给时间控件  
-                dtp.Location = new Point(_Rectangle.X, _Rectangle.Y); //把单元格位置赋给时间控件  
-                if (dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00")
+                dtp.Location = new Point(_Rectangle.X, _Rectangle.Y); //把单元格位置赋给时间控件 
+                if (dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00" && dataGridView1.CurrentCell.Value.ToString() != "0001/1/1 0:00:00")//0001/1/1 0:00:00
+                {
                     dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
+
+                    if (changedtp == true)
+                    {
+                        mark_datagridchanges(e);
+                        changedtp = false;
+
+                    }
+
+                }
+                else
+                {
+                    dtp.Value = DateTime.Now;
+                    dataGridView1.CurrentCell.Value = DateTime.Now;
+                }
                 dtp.Visible = true;  //可以显示控件了  
             }
-            else if (e.ColumnIndex == 13)
+            else if (e.ColumnIndex == 10)
             {
                 _Rectangle = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true); //得到所在单元格位置和大小  
                 dtp.Size = new Size(_Rectangle.Width, _Rectangle.Height); //把单元格大小赋给时间控件  
                 dtp.Location = new Point(_Rectangle.X, _Rectangle.Y); //把单元格位置赋给时间控件  
-                if (dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00")
+                if (dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00" && dataGridView1.CurrentCell.Value.ToString() != "0001/1/1 0:00:00")//0001/1/1 0:00:00
+                {
                     dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
+
+                    if (changedtp == true)
+                    {
+                        mark_datagridchanges(e);
+                        changedtp = false;
+
+                    }
+
+                }
+                else
+                {
+                    dtp.Value = DateTime.Now;
+                    dataGridView1.CurrentCell.Value = DateTime.Now;
+                }
+                dtp.Visible = true;  //可以显示控件了  
+            }
+            else if (e.ColumnIndex == 14)
+            {
+                _Rectangle = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true); //得到所在单元格位置和大小  
+                dtp.Size = new Size(_Rectangle.Width, _Rectangle.Height); //把单元格大小赋给时间控件  
+                dtp.Location = new Point(_Rectangle.X, _Rectangle.Y); //把单元格位置赋给时间控件  
+                if (dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00" && dataGridView1.CurrentCell.Value.ToString() != "0001/1/1 0:00:00")//0001/1/1 0:00:00
+                {
+                    dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
+
+                    if (changedtp == true)
+                    {
+                        mark_datagridchanges(e);
+                        changedtp = false;
+
+                    }
+
+                }
+                else
+                {
+                    dtp.Value = DateTime.Now;
+                    dataGridView1.CurrentCell.Value = DateTime.Now;
+                }
                 dtp.Visible = true;  //可以显示控件了  
             }
             else
@@ -854,10 +923,34 @@ namespace JNOrderManagermentSystem
 
 
         }
+
+        private void mark_datagridchanges(DataGridViewCellEventArgs e)
+        {
+
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            string cell_key = e.RowIndex.ToString() + "_" + e.ColumnIndex.ToString();
+            var new_cell_value = row.Cells[e.ColumnIndex].Value;
+            var original_cell_value = dataGridChanges[cell_key];
+            if (new_cell_value == null && original_cell_value == null)
+            {
+                dataGridChanges.Remove(cell_key + "_changed");
+            }
+            else if ((new_cell_value == null && original_cell_value != null) || (new_cell_value != null && original_cell_value == null) || !new_cell_value.Equals(original_cell_value))
+            {
+                dataGridChanges[cell_key + "_changed"] = new_cell_value;
+            }
+            else
+            {
+                dataGridChanges.Remove(cell_key + "_changed");
+            }
+        }
         /*************时间控件选择时间时****************/
         private void dtp_TextChange(object sender, EventArgs e)
         {
             dataGridView1.CurrentCell.Value = dtp.Value;  //时间控件选择时间时，就把时间赋给所在的单元格  
+            changedtp = true;
+
+
         }
 
         /***********当列的宽度变化时，时间控件先隐藏起来，不然单元格变大时间控件无法跟着变大哦***********/

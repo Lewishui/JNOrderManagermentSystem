@@ -60,6 +60,7 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.Message = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customer_name = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dinghuoshijian = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,7 +79,6 @@
             this.Input_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.xinzeng = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Message = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -150,11 +150,12 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Message,
             this.customer_name,
             this.dinghuoshijian,
             this.order_no,
@@ -172,8 +173,7 @@
             this.beizhu,
             this.Input_Date,
             this.order_id,
-            this.xinzeng,
-            this.Message});
+            this.xinzeng});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 95);
@@ -409,6 +409,13 @@
             this.backgroundWorker2.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker2_ProgressChanged);
             this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
             // 
+            // Message
+            // 
+            this.Message.DataPropertyName = "Message";
+            this.Message.HeaderText = "Message";
+            this.Message.Name = "Message";
+            this.Message.Width = 50;
+            // 
             // customer_name
             // 
             this.customer_name.DataPropertyName = "customer_name";
@@ -423,6 +430,7 @@
             this.dinghuoshijian.DataPropertyName = "dinghuoshijian";
             this.dinghuoshijian.HeaderText = "订货时间";
             this.dinghuoshijian.Name = "dinghuoshijian";
+            this.dinghuoshijian.Width = 110;
             // 
             // order_no
             // 
@@ -474,12 +482,14 @@
             this.yujijiaohuoshijian.DataPropertyName = "yujijiaohuoshijian";
             this.yujijiaohuoshijian.HeaderText = "预计交货时间";
             this.yujijiaohuoshijian.Name = "yujijiaohuoshijian";
+            this.yujijiaohuoshijian.Width = 110;
             // 
             // jianhuoshijian2
             // 
             this.jianhuoshijian2.DataPropertyName = "jianhuoshijian2";
             this.jianhuoshijian2.HeaderText = "交货时间2";
             this.jianhuoshijian2.Name = "jianhuoshijian2";
+            this.jianhuoshijian2.Width = 110;
             // 
             // dingdanguanliyuan
             // 
@@ -516,6 +526,7 @@
             this.fukuanriqi.DataPropertyName = "fukuanriqi";
             this.fukuanriqi.HeaderText = "付款日期";
             this.fukuanriqi.Name = "fukuanriqi";
+            this.fukuanriqi.Width = 110;
             // 
             // beizhu
             // 
@@ -543,12 +554,6 @@
             this.xinzeng.Name = "xinzeng";
             this.xinzeng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.xinzeng.Visible = false;
-            // 
-            // Message
-            // 
-            this.Message.DataPropertyName = "Message";
-            this.Message.HeaderText = "Message";
-            this.Message.Name = "Message";
             // 
             // frmOrderMain
             // 
@@ -607,6 +612,7 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.ToolStripMenuItem 打印ToolStripMenuItem;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Message;
         private System.Windows.Forms.DataGridViewComboBoxColumn customer_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn dinghuoshijian;
         private System.Windows.Forms.DataGridViewTextBoxColumn order_no;
@@ -625,6 +631,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Input_Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn order_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn xinzeng;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Message;
     }
 }
