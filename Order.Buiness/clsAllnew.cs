@@ -353,14 +353,22 @@ namespace Order.Buiness
                 clscustomerinfo item = new clscustomerinfo();
 
                 item.customer_id = reader.GetInt32(0);
-                item.customer_name = reader.GetString(1);
-                item.customer_adress = reader.GetString(2);
-                item.customer_shuihao = reader.GetString(3);
-                item.customer_bank = reader.GetString(4);
-                item.customer_account = reader.GetString(5);
-                item.customer_phone = reader.GetString(6);
-                item.customer_contact = reader.GetString(7);
-                if (reader.GetString(8) != null && reader.GetString(8) != "")
+                if (reader.GetValue(1) != null && Convert.ToString(reader.GetValue(1)) != "")
+                    item.customer_name = reader.GetString(1);
+                if (reader.GetValue(2) != null && Convert.ToString(reader.GetValue(2)) != "")
+                    item.customer_adress = reader.GetString(2);
+                if (reader.GetValue(3) != null && Convert.ToString(reader.GetValue(3)) != "")
+                    item.customer_shuihao = reader.GetString(3);
+                if (reader.GetValue(4) != null && Convert.ToString(reader.GetValue(4)) != "")
+                    item.customer_bank = reader.GetString(4);
+                if (reader.GetValue(5) != null && Convert.ToString(reader.GetValue(5)) != "")
+                    item.customer_account = reader.GetString(5);
+                if (reader.GetValue(6) != null && Convert.ToString(reader.GetValue(6)) != "")
+                    item.customer_phone = reader.GetString(6);
+                if (reader.GetValue(7) != null && Convert.ToString(reader.GetValue(7)) != "")
+                    item.customer_contact = reader.GetString(7);
+
+                if (reader.GetValue(8) != null && Convert.ToString(reader.GetValue(8)) != "")
                     item.Input_Date = Convert.ToDateTime(reader.GetString(8));
 
 
@@ -394,9 +402,13 @@ namespace Order.Buiness
                 clsProductinfo item = new clsProductinfo();
 
                 item.Product_id = reader.GetInt32(0);
+                if (reader.GetValue(1) != null && Convert.ToString(reader.GetValue(1)) != "")
                 item.Product_no = reader.GetString(1);
+                if (reader.GetValue(2) != null && Convert.ToString(reader.GetValue(2)) != "")
                 item.Product_name = reader.GetString(2);
+                if (reader.GetValue(3) != null && Convert.ToString(reader.GetValue(3)) != "")
                 item.Product_salse = reader.GetString(3);
+                if (reader.GetValue(4) != null && Convert.ToString(reader.GetValue(4)) != "")
                 item.Product_address = reader.GetString(4);
 
                 if (reader.GetString(5) != null && reader.GetString(5) != "")
@@ -603,11 +615,13 @@ namespace Order.Buiness
 
                 item.end_user = reader.GetString(4);
 
-                if (reader.GetString(5) != null && reader.GetString(5) != "")
+
+                if (reader.GetValue(5) != null && Convert.ToString(reader.GetValue(5)) != "")
+
                     item.Input_Date = Convert.ToDateTime(reader.GetString(5));
                 item.vendor = reader.GetString(6);
-                if (reader.GetString(7) != null && reader.GetString(7) != "")
-                item.daohuoshijian = reader.GetString(7);
+                if (reader.GetValue(7) != null && Convert.ToString(reader.GetValue(7)) != "")
+                    item.daohuoshijian = reader.GetString(7);
 
 
 
@@ -631,6 +645,6 @@ namespace Order.Buiness
             return isrun;
 
         }
-     
+
     }
 }

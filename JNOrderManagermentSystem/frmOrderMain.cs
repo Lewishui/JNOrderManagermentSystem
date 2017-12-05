@@ -823,7 +823,7 @@ namespace JNOrderManagermentSystem
                 _Rectangle = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true); //得到所在单元格位置和大小  
                 dtp.Size = new Size(_Rectangle.Width, _Rectangle.Height); //把单元格大小赋给时间控件  
                 dtp.Location = new Point(_Rectangle.X, _Rectangle.Y); //把单元格位置赋给时间控件  
-                if (dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00" && dataGridView1.CurrentCell.Value.ToString() != "0001/1/1 0:00:00")//0001/1/1 0:00:00
+                if (!dataGridView1.CurrentCell.Value.ToString().Contains("0001") && dataGridView1.CurrentCell.Value.ToString() != "0001/1/1 0:00:00")//0001/1/1 0:00:00
                 {
                     dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
                     dataGridView1.Rows[RowRemark].Cells[cloumn].Value = dtp.Value;
@@ -851,7 +851,7 @@ namespace JNOrderManagermentSystem
                 _Rectangle = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true); //得到所在单元格位置和大小  
                 dtp.Size = new Size(_Rectangle.Width, _Rectangle.Height); //把单元格大小赋给时间控件  
                 dtp.Location = new Point(_Rectangle.X, _Rectangle.Y); //把单元格位置赋给时间控件 
-                if (dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00" && dataGridView1.CurrentCell.Value.ToString() != "0001/1/1 0:00:00")//0001/1/1 0:00:00
+                if (!dataGridView1.CurrentCell.Value.ToString().Contains("0001")&&dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00" && dataGridView1.CurrentCell.Value.ToString() != "0001/1/1 0:00:00")//0001/1/1 0:00:00
                 {
                     dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
 
@@ -875,7 +875,7 @@ namespace JNOrderManagermentSystem
                 _Rectangle = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true); //得到所在单元格位置和大小  
                 dtp.Size = new Size(_Rectangle.Width, _Rectangle.Height); //把单元格大小赋给时间控件  
                 dtp.Location = new Point(_Rectangle.X, _Rectangle.Y); //把单元格位置赋给时间控件  
-                if (dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00" && dataGridView1.CurrentCell.Value.ToString() != "0001/1/1 0:00:00")//0001/1/1 0:00:00
+                if (!dataGridView1.CurrentCell.Value.ToString().Contains("0001")&&dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00" && dataGridView1.CurrentCell.Value.ToString() != "0001/1/1 0:00:00")//0001/1/1 0:00:00
                 {
                     dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
 
@@ -899,7 +899,7 @@ namespace JNOrderManagermentSystem
                 _Rectangle = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true); //得到所在单元格位置和大小  
                 dtp.Size = new Size(_Rectangle.Width, _Rectangle.Height); //把单元格大小赋给时间控件  
                 dtp.Location = new Point(_Rectangle.X, _Rectangle.Y); //把单元格位置赋给时间控件  
-                if (dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00" && dataGridView1.CurrentCell.Value.ToString() != "0001/1/1 0:00:00")//0001/1/1 0:00:00
+                if (!dataGridView1.CurrentCell.Value.ToString().Contains("0001") && dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00" && dataGridView1.CurrentCell.Value.ToString() != "0001/1/1 0:00:00")//0001/1/1 0:00:00
                 {
                     dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
 
