@@ -57,6 +57,9 @@ namespace JNOrderManagermentSystem
             userlist_Server = new List<clscustomerinfo>();
 
             clscustomerinfo item = new clscustomerinfo();
+       
+
+            item.customer_name = this.txname.Text;
             if (item.customer_name == null || item.customer_name == "")
             {
                 errorProvider1.SetError(txname, "不能为空");
@@ -65,7 +68,6 @@ namespace JNOrderManagermentSystem
             else
                 errorProvider1.SetError(txname, String.Empty);
 
-            item.customer_name = this.txname.Text;
             item.customer_adress = this.txadress.Text;
             item.customer_shuihao = this.tshuihao.Text;
             item.customer_bank = this.txbank.Text;
@@ -92,6 +94,11 @@ namespace JNOrderManagermentSystem
             if (txname.Text !=
                 "")
                 errorProvider1.SetError(txname, String.Empty);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            clear();
         }
     }
 }

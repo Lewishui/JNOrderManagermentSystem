@@ -181,21 +181,21 @@ namespace JNOrderManagermentSystem
         private void tsbLogin_Click(object sender, EventArgs e)
         {
             #region Noway
-            DateTime oldDate = DateTime.Now;
-            DateTime dt3;
-            string endday = DateTime.Now.ToString("yyyy/MM/dd");
-            dt3 = Convert.ToDateTime(endday);
-            DateTime dt2;
-            dt2 = Convert.ToDateTime("2017/12/15");
+            //DateTime oldDate = DateTime.Now;
+            //DateTime dt3;
+            //string endday = DateTime.Now.ToString("yyyy/MM/dd");
+            //dt3 = Convert.ToDateTime(endday);
+            //DateTime dt2;
+            //dt2 = Convert.ToDateTime("2017/12/15");
 
-            TimeSpan ts = dt2 - dt3;
-            int timeTotal = ts.Days;
-            if (timeTotal < 0)
-            {
-                MessageBox.Show("Please Contact your administrator !");
-                return;
-            }
-            MessageBox.Show("当前为测试系统 !");
+            //TimeSpan ts = dt2 - dt3;
+            //int timeTotal = ts.Days;
+            //if (timeTotal < 0)
+            //{
+            //    MessageBox.Show("Please Contact your administrator !");
+            //    return;
+            //}
+            //MessageBox.Show("当前为测试系统 !");
 
             #endregion
 
