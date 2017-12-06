@@ -403,13 +403,13 @@ namespace Order.Buiness
 
                 item.Product_id = reader.GetInt32(0);
                 if (reader.GetValue(1) != null && Convert.ToString(reader.GetValue(1)) != "")
-                item.Product_no = reader.GetString(1);
+                    item.Product_no = reader.GetString(1);
                 if (reader.GetValue(2) != null && Convert.ToString(reader.GetValue(2)) != "")
-                item.Product_name = reader.GetString(2);
+                    item.Product_name = reader.GetString(2);
                 if (reader.GetValue(3) != null && Convert.ToString(reader.GetValue(3)) != "")
-                item.Product_salse = reader.GetString(3);
+                    item.Product_salse = reader.GetString(3);
                 if (reader.GetValue(4) != null && Convert.ToString(reader.GetValue(4)) != "")
-                item.Product_address = reader.GetString(4);
+                    item.Product_address = reader.GetString(4);
 
                 if (reader.GetString(5) != null && reader.GetString(5) != "")
                     item.Input_Date = Convert.ToDateTime(reader.GetString(5));
@@ -446,37 +446,63 @@ namespace Order.Buiness
                 clsOrderinfo item = new clsOrderinfo();
 
                 item.order_id = reader.GetInt32(0);
-                item.customer_name = reader.GetString(1);
-                if (reader.GetString(2) != null && reader.GetString(2) != "")
+                if (reader.GetValue(1) != null && Convert.ToString(reader.GetValue(1)) != "")
+
+                    item.customer_name = reader.GetString(1);
+
+                if (reader.GetValue(2) != null && Convert.ToString(reader.GetValue(2)) != "")
                     item.dinghuoshijian = Convert.ToDateTime(reader.GetString(2));
+                if (reader.GetValue(3) != null && Convert.ToString(reader.GetValue(3)) != "")
 
-                item.order_no = reader.GetString(3);
-                item.Product_no = reader.GetString(4);
+                    item.order_no = reader.GetString(3);
+                if (reader.GetValue(4) != null && Convert.ToString(reader.GetValue(4)) != "")
 
-                item.Product_name = reader.GetString(5);
-                item.shuliang = reader.GetString(6);
-                item.Product_salse = reader.GetString(7);
-                item.jine = reader.GetString(8);
+                    item.Product_no = reader.GetString(4);
+                if (reader.GetValue(5) != null && Convert.ToString(reader.GetValue(5)) != "")
 
-                if (reader.GetString(9) != null && reader.GetString(9) != "")
+                    item.Product_name = reader.GetString(5);
+                if (reader.GetValue(6) != null && Convert.ToString(reader.GetValue(6)) != "")
+
+                    item.shuliang = reader.GetString(6);
+                if (reader.GetValue(7) != null && Convert.ToString(reader.GetValue(7)) != "")
+
+                    item.Product_salse = reader.GetString(7);
+                if (reader.GetValue(8) != null && Convert.ToString(reader.GetValue(8)) != "")
+
+                    item.jine = reader.GetString(8);
+
+
+                if (reader.GetValue(9) != null && Convert.ToString(reader.GetValue(9)) != "")
+
                     item.yujijiaohuoshijian = Convert.ToDateTime(reader.GetString(9));
 
 
 
-                if (reader.GetString(10) != null && reader.GetString(10) != "")
-                    item.jianhuoshijian2 = Convert.ToDateTime(reader.GetString(10));
+                //if (reader.GetString(10) != null && reader.GetString(10) != "")
+                if (reader.GetValue(10) != null && Convert.ToString(reader.GetValue(10)) != "")
 
-                item.dingdanguanliyuan = reader.GetString(11);
-                item.kaipiao = reader.GetString(12);
-                item.shifoujiaohuo = reader.GetString(13);
+                    item.jianhuoshijian2 = Convert.ToDateTime(reader.GetString(10));
+                if (reader.GetValue(11) != null && Convert.ToString(reader.GetValue(11)) != "")
+
+                    item.dingdanguanliyuan = reader.GetString(11);
+                if (reader.GetValue(12) != null && Convert.ToString(reader.GetValue(12)) != "")
+
+                    item.kaipiao = reader.GetString(12);
+                if (reader.GetValue(13) != null && Convert.ToString(reader.GetValue(13)) != "")
+
+                    item.shifoujiaohuo = reader.GetString(13);
 
 
                 if (reader.GetString(14) != null && reader.GetString(14) != "")
                     item.fukuanriqi = Convert.ToDateTime(reader.GetString(14));
-                item.beizhu = reader.GetString(15);
+                if (reader.GetValue(15) != null && Convert.ToString(reader.GetValue(15)) != "")
+
+                    item.beizhu = reader.GetString(15);
 
 
-                if (reader.GetString(16) != null && reader.GetString(16) != "")
+                //if (reader.GetString(16) != null && reader.GetString(16) != "")
+                if (reader.GetValue(16) != null && Convert.ToString(reader.GetValue(16)) != "")
+
                     item.Input_Date = Convert.ToDateTime(reader.GetString(16));
 
 

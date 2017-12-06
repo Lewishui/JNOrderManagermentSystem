@@ -31,7 +31,7 @@ namespace JNOrderManagermentSystem
                 if (ISURN == 1)
                 {
             
-                    if (MessageBox.Show(" 客户创建成功 , 是否继续添加 ?", "Info", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (MessageBox.Show(" 产品创建成功 , 是否继续添加 ?", "Info", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         clear();
                     }
@@ -40,7 +40,7 @@ namespace JNOrderManagermentSystem
                 }
                 if (ISURN == 0)
                 {
-                    MessageBox.Show("客户创建失败,请检查是否录入有误！");
+                    MessageBox.Show("产品创建失败,请检查是否录入有误！");
 
                 }
             }

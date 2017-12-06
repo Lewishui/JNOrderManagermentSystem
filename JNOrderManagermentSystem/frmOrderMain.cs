@@ -45,12 +45,8 @@ namespace JNOrderManagermentSystem
             Orderinfolist_Server = new List<clsOrderinfo>();
             deletedorderList = new List<clsOrderinfo>();
             this.WindowState = FormWindowState.Maximized;
-
-
-
+            
             binddav_combox();
-
-
 
             this.BindDataGridView();
 
@@ -91,9 +87,9 @@ namespace JNOrderManagermentSystem
             this.Product_name.ValueMember = "Product_name";
             this.Product_name.DataSource = Productinfolist_Server;
             //
-            this.Product_salse.DisplayMember = "Product_salse";
-            this.Product_salse.ValueMember = "Product_salse";
-            this.Product_salse.DataSource = Productinfolist_Server;
+            //this.Product_salse.DisplayMember = "Product_salse";
+            //this.Product_salse.ValueMember = "Product_salse";
+            //this.Product_salse.DataSource = Productinfolist_Server;
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -181,14 +177,35 @@ namespace JNOrderManagermentSystem
             string strSelect = "select * from JNOrder_order where Input_Date>='" + startAt.ToString("yyyy/MM/dd") + "'" + "and " + "Input_Date<='" + endAt.ToString("yyyy/MM/dd") + "'";
             // strSelect = "select * from JNOrder_customer where Input_Date BETWEEN #" + startAt + "# AND #" + endAt + "#";//成功
 
+            #region 判断汉字或字母
+            int istrue = 0;
 
-            if (txfind.Length > 0)
+            bool ischina = clsCommHelp.HasChineseTest(txfind.ToString());
+            if (ischina == false && txfind != "")
+            {
+                if (Regex.Matches(txfind.ToString(), "[a-zA-Z]").Count <= 0 && !txfind.ToString().Contains("/"))
+                {
+                    istrue = 1;
+
+                }
+            }
+            #endregion
+
+            if (txfind.Length > 0 && istrue==1)
             {
                 strSelect += " And order_no like '%" + txfind + "%'";
                 if (txfind == "所有")
                     strSelect = "select * from JNOrder_order";
+            }
+
+            if (txfind.Length > 0 && istrue == 0)
+            {
+                strSelect += " And customer_name like '%" + txfind + "%'";
+                if (txfind == "所有")
+                    strSelect = "select * from JNOrder_order";
 
             }
+
 
             strSelect += " order by order_id desc";
 
@@ -380,6 +397,18 @@ namespace JNOrderManagermentSystem
                 //}
 
             }
+            //计算金额
+            DataGridViewColumn column = dataGridView1.Columns[e.ColumnIndex];
+
+            if (column == shuliang || column == Product_salse)
+            {
+                var rowi = dataGridView1.Rows[RowRemark];
+
+                var model = rowi.DataBoundItem as clsOrderinfo;
+                if (model.shuliang != null && model.shuliang != "" && model.Product_salse != null && model.Product_salse != "")
+                    dataGridView1.Rows[RowRemark].Cells[jine.Index].Value = Convert.ToDouble(model.shuliang) * Convert.ToDouble(model.Product_salse);
+            }
+
         }
 
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
@@ -851,7 +880,7 @@ namespace JNOrderManagermentSystem
                 _Rectangle = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true); //得到所在单元格位置和大小  
                 dtp.Size = new Size(_Rectangle.Width, _Rectangle.Height); //把单元格大小赋给时间控件  
                 dtp.Location = new Point(_Rectangle.X, _Rectangle.Y); //把单元格位置赋给时间控件 
-                if (!dataGridView1.CurrentCell.Value.ToString().Contains("0001")&&dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00" && dataGridView1.CurrentCell.Value.ToString() != "0001/1/1 0:00:00")//0001/1/1 0:00:00
+                if (!dataGridView1.CurrentCell.Value.ToString().Contains("0001") && dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00" && dataGridView1.CurrentCell.Value.ToString() != "0001/1/1 0:00:00")//0001/1/1 0:00:00
                 {
                     dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
 
@@ -875,7 +904,7 @@ namespace JNOrderManagermentSystem
                 _Rectangle = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true); //得到所在单元格位置和大小  
                 dtp.Size = new Size(_Rectangle.Width, _Rectangle.Height); //把单元格大小赋给时间控件  
                 dtp.Location = new Point(_Rectangle.X, _Rectangle.Y); //把单元格位置赋给时间控件  
-                if (!dataGridView1.CurrentCell.Value.ToString().Contains("0001")&&dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00" && dataGridView1.CurrentCell.Value.ToString() != "0001/1/1 0:00:00")//0001/1/1 0:00:00
+                if (!dataGridView1.CurrentCell.Value.ToString().Contains("0001") && dataGridView1.CurrentCell.Value.ToString() != "01/01/0001 00:00:00" && dataGridView1.CurrentCell.Value.ToString() != "0001/1/1 0:00:00")//0001/1/1 0:00:00
                 {
                     dtp.Value = (DateTime)dataGridView1.CurrentCell.Value;
 
@@ -965,6 +994,7 @@ namespace JNOrderManagermentSystem
         {
             dtp.Visible = false;
         }
+        //textBox8_Enter  属性
         private void textBox8_Enter(object sender, EventArgs e)
         {
             this.textBox8.AutoCompleteCustomSource.AddRange(new string[] {

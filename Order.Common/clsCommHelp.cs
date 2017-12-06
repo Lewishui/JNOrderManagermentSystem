@@ -266,7 +266,29 @@ namespace Order.Common
 
         #endregion
 
+        #region 判断汉字
+        public static bool HasChineseTest(string text)
+        {
+            //string text = "是不是汉字，ABC,keleyi.com";
+            char[] c = text.ToCharArray();
+            bool ischina = false;
 
+            for (int i = 0; i < c.Length; i++)
+            {
+                if (c[i] >= 0x4e00 && c[i] <= 0x9fbb)
+                {
+                    ischina = true;
+
+                }
+                else
+                {
+                    //  ischina = false;
+                }
+            }
+            return ischina;
+
+        }
+        #endregion
 
     }
 }

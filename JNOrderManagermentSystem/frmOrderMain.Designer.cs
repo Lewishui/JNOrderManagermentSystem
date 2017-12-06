@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderMain));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -67,7 +67,7 @@
             this.Product_no = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Product_name = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.shuliang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_salse = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Product_salse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yujijiaohuoshijian = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jianhuoshijian2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -150,8 +150,8 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -244,9 +244,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(471, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 15);
+            this.label1.Size = new System.Drawing.Size(200, 15);
             this.label1.TabIndex = 90;
-            this.label1.Text = "*如果查找所有请填写\"所有\"";
+            this.label1.Text = "*如果查找所有请填写\"所有\"或订单号";
             // 
             // label24
             // 
@@ -266,7 +266,6 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(356, 26);
             this.textBox8.TabIndex = 8;
-            this.textBox8.Enter += new System.EventHandler(this.textBox8_Enter);
             // 
             // filterButton
             // 
@@ -465,11 +464,9 @@
             // Product_salse
             // 
             this.Product_salse.DataPropertyName = "Product_salse";
-            this.Product_salse.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.Product_salse.HeaderText = "单价";
             this.Product_salse.Name = "Product_salse";
             this.Product_salse.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Product_salse.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // jine
             // 
@@ -619,7 +616,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn Product_no;
         private System.Windows.Forms.DataGridViewComboBoxColumn Product_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn shuliang;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Product_salse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product_salse;
         private System.Windows.Forms.DataGridViewTextBoxColumn jine;
         private System.Windows.Forms.DataGridViewTextBoxColumn yujijiaohuoshijian;
         private System.Windows.Forms.DataGridViewTextBoxColumn jianhuoshijian2;
