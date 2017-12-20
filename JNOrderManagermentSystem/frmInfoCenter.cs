@@ -181,6 +181,7 @@ namespace JNOrderManagermentSystem
                     qtyTable.Rows[jk][13] = k.fukuanriqi;
                     qtyTable.Rows[jk][14] = k.beizhu;
                     qtyTable.Rows[jk][15] = k.Input_Date;
+                    jk++;
 
                     #endregion
 
