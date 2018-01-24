@@ -36,6 +36,9 @@ namespace JNOrderManagermentSystem
         DataGridViewCellEventArgs eshar;
         bool changedtp;
 
+        //combox 下拉 集合
+        List<clscustomerinfo> customerinfolist_Server;
+
 
         public frmOrderMain(string user)
         {
@@ -68,7 +71,7 @@ namespace JNOrderManagermentSystem
             string strSelect = "select * from JNOrder_customer";
             strSelect += " order by customer_id desc";
             clsAllnew BusinessHelp = new clsAllnew();
-            List<clscustomerinfo> customerinfolist_Server = new List<clscustomerinfo>();
+             customerinfolist_Server = new List<clscustomerinfo>();
             customerinfolist_Server = BusinessHelp.findcustomer(strSelect);
             this.customer_name.DisplayMember = "customer_name";
             this.customer_name.ValueMember = "customer_name";
@@ -838,6 +841,7 @@ namespace JNOrderManagermentSystem
             if (column == customer_name)
             {
 
+                customerinfolist_Server = customerinfolist_Server.FindAll(s => s.customer_name.Contains(dataGridView1.CurrentCell.Value.ToString()));
 
             }
         }
@@ -1011,7 +1015,7 @@ namespace JNOrderManagermentSystem
             if (dataGridView1.CurrentCell.OwningColumn is DataGridViewComboBoxColumn)
             {
                 ((ComboBox)e.Control).DropDownStyle = ComboBoxStyle.DropDown;
-                ((ComboBox)e.Control).AutoCompleteMode = AutoCompleteMode.Append;
+                ((ComboBox)e.Control).AutoCompleteMode = AutoCompleteMode.Suggest;
                 ((ComboBox)e.Control).AutoCompleteSource = AutoCompleteSource.ListItems;
             }
         }

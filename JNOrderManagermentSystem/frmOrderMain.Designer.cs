@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderMain));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -51,9 +51,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.newButton = new System.Windows.Forms.Button();
-            this.moveDownButton1 = new System.Windows.Forms.Button();
             this.delScheduleButton = new System.Windows.Forms.Button();
-            this.moveUpButton2 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.pbStatus = new System.Windows.Forms.ToolStripProgressBar();
@@ -150,8 +148,8 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -322,9 +320,7 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
             this.groupBox3.Controls.Add(this.newButton);
-            this.groupBox3.Controls.Add(this.moveDownButton1);
             this.groupBox3.Controls.Add(this.delScheduleButton);
-            this.groupBox3.Controls.Add(this.moveUpButton2);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox3.Location = new System.Drawing.Point(3, 426);
@@ -343,15 +339,6 @@
             this.newButton.UseVisualStyleBackColor = true;
             this.newButton.Click += new System.EventHandler(this.newButton_Click);
             // 
-            // moveDownButton1
-            // 
-            this.moveDownButton1.Location = new System.Drawing.Point(129, 9);
-            this.moveDownButton1.Name = "moveDownButton1";
-            this.moveDownButton1.Size = new System.Drawing.Size(35, 25);
-            this.moveDownButton1.TabIndex = 41;
-            this.moveDownButton1.Text = "▽";
-            this.moveDownButton1.UseVisualStyleBackColor = true;
-            // 
             // delScheduleButton
             // 
             this.delScheduleButton.Location = new System.Drawing.Point(47, 9);
@@ -361,15 +348,6 @@
             this.delScheduleButton.Text = "-";
             this.delScheduleButton.UseVisualStyleBackColor = true;
             this.delScheduleButton.Click += new System.EventHandler(this.delScheduleButton_Click);
-            // 
-            // moveUpButton2
-            // 
-            this.moveUpButton2.Location = new System.Drawing.Point(88, 9);
-            this.moveUpButton2.Name = "moveUpButton2";
-            this.moveUpButton2.Size = new System.Drawing.Size(35, 25);
-            this.moveUpButton2.TabIndex = 40;
-            this.moveUpButton2.Text = "△";
-            this.moveUpButton2.UseVisualStyleBackColor = true;
             // 
             // imageList1
             // 
@@ -417,6 +395,7 @@
             // 
             // customer_name
             // 
+            this.customer_name.AutoComplete = false;
             this.customer_name.DataPropertyName = "customer_name";
             this.customer_name.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.customer_name.HeaderText = "客户";
@@ -603,9 +582,7 @@
         private System.Windows.Forms.ToolStripMenuItem 保存ToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button newButton;
-        private System.Windows.Forms.Button moveDownButton1;
         private System.Windows.Forms.Button delScheduleButton;
-        private System.Windows.Forms.Button moveUpButton2;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.ToolStripMenuItem 打印ToolStripMenuItem;
         private System.Windows.Forms.ImageList imageList1;
