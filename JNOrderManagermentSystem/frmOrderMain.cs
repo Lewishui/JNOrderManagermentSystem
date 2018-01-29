@@ -48,7 +48,7 @@ namespace JNOrderManagermentSystem
             Orderinfolist_Server = new List<clsOrderinfo>();
             deletedorderList = new List<clsOrderinfo>();
             this.WindowState = FormWindowState.Maximized;
-            
+
             binddav_combox();
 
             this.BindDataGridView();
@@ -71,7 +71,7 @@ namespace JNOrderManagermentSystem
             string strSelect = "select * from JNOrder_customer";
             strSelect += " order by customer_id desc";
             clsAllnew BusinessHelp = new clsAllnew();
-             customerinfolist_Server = new List<clscustomerinfo>();
+            customerinfolist_Server = new List<clscustomerinfo>();
             customerinfolist_Server = BusinessHelp.findcustomer(strSelect);
             this.customer_name.DisplayMember = "customer_name";
             this.customer_name.ValueMember = "customer_name";
@@ -194,7 +194,7 @@ namespace JNOrderManagermentSystem
             }
             #endregion
 
-            if (txfind.Length > 0 && istrue==1)
+            if (txfind.Length > 0 && istrue == 1)
             {
                 strSelect += " And order_no like '%" + txfind + "%'";
                 if (txfind == "所有")
@@ -838,7 +838,7 @@ namespace JNOrderManagermentSystem
         {
             DataGridViewColumn column = dataGridView1.Columns[e.ColumnIndex];
 
-            if (column == customer_name)
+            if (column == customer_name && dataGridView1.CurrentCell.Value != null)
             {
 
                 customerinfolist_Server = customerinfolist_Server.FindAll(s => s.customer_name.Contains(dataGridView1.CurrentCell.Value.ToString()));

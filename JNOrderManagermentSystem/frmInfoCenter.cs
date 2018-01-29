@@ -47,6 +47,8 @@ namespace JNOrderManagermentSystem
             }
             if (radioButton1.Checked == true)
             {
+                customerinfolist_Server = new List<clscustomerinfo>();
+
                 Read_order();
 
                 List<string> customer_nameList = (from v in Orderinfolist_Server select v.customer_name).Distinct().ToList();
@@ -60,15 +62,16 @@ namespace JNOrderManagermentSystem
                     else
                         conditions_new += "," + "'" + customer_nameList[i] + "'";
                 }
+                if (conditions_new != "")
+                {
+                    string strSelect = "select * from JNOrder_customer where customer_name in ( " + conditions_new + " )";
 
-                string strSelect = "select * from JNOrder_customer where customer_name in ( " + conditions_new + " )";
+                    strSelect += " order by customer_id desc";
 
-                strSelect += " order by customer_id desc";
-
-                clsAllnew BusinessHelp = new clsAllnew();
-                customerinfolist_Server = new List<clscustomerinfo>();
-                customerinfolist_Server = BusinessHelp.findcustomer(strSelect);
-
+                    clsAllnew BusinessHelp = new clsAllnew();
+                    customerinfolist_Server = new List<clscustomerinfo>();
+                    customerinfolist_Server = BusinessHelp.findcustomer(strSelect);
+                }
             }
             else
             {
