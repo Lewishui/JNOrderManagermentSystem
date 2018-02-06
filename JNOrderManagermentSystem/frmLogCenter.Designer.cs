@@ -101,17 +101,17 @@
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(9, 15);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(89, 20);
+            this.label24.Size = new System.Drawing.Size(105, 20);
             this.label24.TabIndex = 89;
-            this.label24.Text = "查找供应商";
+            this.label24.Text = "查找产品型号";
             // 
             // textBox8
             // 
             this.textBox8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(107, 15);
+            this.textBox8.Location = new System.Drawing.Point(120, 15);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(151, 26);
+            this.textBox8.Size = new System.Drawing.Size(138, 26);
             this.textBox8.TabIndex = 8;
             // 
             // filterButton

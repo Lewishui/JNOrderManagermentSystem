@@ -134,7 +134,7 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // frmaddcustomer
+            // frmaddProcuct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -150,9 +150,9 @@
             this.Controls.Add(this.txproductname);
             this.Controls.Add(this.label12);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "frmaddcustomer";
+            this.Name = "frmaddProcuct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "新增客户";
+            this.Text = "新增产品";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -142,7 +142,7 @@ namespace JNOrderManagermentSystem
 
             if (txfind.Length > 0)
             {
-                strSelect += " And vendor like '%" + txfind + "%'";
+                strSelect += " And product_no like '%" + txfind + "%'";//4、工作日志的内容查找，现在是按供应商查找，（查找供应商改为查找型号）
                 if (txfind == "所有")
                     strSelect = "select * from JNOrder_log";
 
