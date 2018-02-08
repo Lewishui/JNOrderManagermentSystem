@@ -93,7 +93,8 @@ namespace JNOrderManagermentSystem
         {
             //this.pbStatus.Value = 0;
             this.toolStripLabel1.Text = "";
-
+            var startAt = this.stockOutDateTimePicker.Value.AddDays(0).Date;
+            endAt = this.stockInDateTimePicker1.Value.AddDays(0).Date;
             txfind = this.textBox8.Text;
             if (txfind.Length <= 0 && checkBox1.Checked == false)
             {
@@ -102,34 +103,38 @@ namespace JNOrderManagermentSystem
                 return;
 
             }
-            if (checkBox1.Checked == true)
+            //if (checkBox1.Checked == true)
             {
+                if (checkBox1.Checked == true)
+                    txfind = "";
+
                 Read_order();
             }
-            else
-            {
-                string conditions_new = "";
+            //else
+            //{
+            //    string conditions_new = "";
 
 
-                {
-                    if (txfind != "所有")
-                        conditions_new += "'" + txfind + "'";
-                    if (txfind == "所有")
-                        conditions_new += "," + "'" + txfind + "'";
-                }
+            //    {
+            //        if (txfind != "所有")
+            //            conditions_new += "'" + txfind + "'";
+            //        if (txfind == "所有")
+            //            conditions_new += "," + "'" + txfind + "'";
+            //    }
 
-                string strSelect = "select * from JNOrder_log where vendor in ( " + conditions_new + " )";
-                if (txfind == "所有")
-                    strSelect = "select * from JNOrder_log ";
+            //    //string strSelect = "select * from JNOrder_log where product_no in ( " + conditions_new + " )";
+            //    string strSelect = "select * from JNOrder_log where product_no like ( " + conditions_new + " )";
+            //    if (txfind == "所有")
+            //        strSelect = "select * from JNOrder_log ";
 
-                strSelect += " order by Log_id desc";
+            //    strSelect += " order by Log_id desc";
 
-                clsAllnew BusinessHelp = new clsAllnew();
-                Loglist_Server = new List<clsLog_info>();
+            //    clsAllnew BusinessHelp = new clsAllnew();
+            //    Loglist_Server = new List<clsLog_info>();
 
-                Loglist_Server = BusinessHelp.findLog(strSelect);
+            //    Loglist_Server = BusinessHelp.findLog(strSelect);
 
-            }
+            //}
 
             this.BindDataGridView();
         }
